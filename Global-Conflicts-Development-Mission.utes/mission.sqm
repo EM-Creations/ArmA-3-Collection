@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1157;
+	toggles=1029;
 	class ItemIDProvider
 	{
-		nextID=76;
+		nextID=80;
 	};
 	class MarkerIDProvider
 	{
-		nextID=15;
+		nextID=19;
 	};
 	class Camera
 	{
-		pos[]={3583.2612,35.374146,3576.9675};
-		dir[]={-0.45081642,-0.47687113,0.75455862};
-		up[]={-0.24458233,0.87897319,0.40937221};
-		aside[]={0.85845459,-1.4901161e-008,0.5128898};
+		pos[]={3573.5747,35.374146,3586.2949};
+		dir[]={-0.075316831,-0.44540355,0.89215642};
+		up[]={-0.03746818,0.89532989,0.44382477};
+		aside[]={0.99645543,0,0.084121868};
 	};
 };
 binarizationWanted=0;
@@ -566,7 +566,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=34;
+		items=37;
 		class Item0
 		{
 			dataType="Group";
@@ -1121,7 +1121,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3586,21.766327,3616};
-				angles[]={0,3.3626385,0};
+				angles[]={-0,3.3626385,0};
 			};
 			side="Empty";
 			flags=4;
@@ -1746,6 +1746,35 @@ class Mission
 			a=5.5640001;
 			b=5.4749999;
 			id=73;
+		};
+		class Item34
+		{
+			dataType="Marker";
+			position[]={9575.998,0.5850755,6325.6885};
+			name="marker_15";
+			type="mil_objective";
+			id=76;
+			atlOffset=99.585075;
+		};
+		class Item35
+		{
+			dataType="Marker";
+			position[]={8703.2715,0.51734149,2611.749};
+			name="marker_16";
+			type="mil_objective";
+			id=77;
+			atlOffset=99.517342;
+		};
+		class Item36
+		{
+			dataType="Marker";
+			position[]={2797.8169,21.493999,4080.8401};
+			name="trackingMarker";
+			text="Now here";
+			type="mil_objective";
+			colorName="ColorPink";
+			id=78;
+			atlOffset=0.0003490448;
 		};
 	};
 	class Connections
