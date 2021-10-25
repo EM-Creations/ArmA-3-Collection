@@ -23,7 +23,7 @@ Additional modules that can be enabled by removing the //
 //#include "ace_medical\root.sqf"
 //#include "ai_attack\root.sqf"
 #include "ai_behaviour\root.sqf"
-//#include "ai_link\root.sqf"
+#include "ai_link\root.sqf"
 //#include "ai_skill\root.sqf"
 //#include "ambient_animation\root.sqf"
 //#include "ambient_effects\root.sqf"
