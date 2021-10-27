@@ -1,6 +1,6 @@
 // Array containing vehicles that will have option to spawn AI driver in them
 // Example: GVAR(AiDriversVehicles) = ["BluforLandRover1"];
-GVAR(AiDriversVehicles) = [];
+GVAR(AiDriversVehicles) = ["veh1", "veh2"];
 
 // Array containing vehicle classnames that will have option to spawn AI driver in them
 GVAR(AiDriversVehicleClasses) = ["Wheeled_APC_F"];
