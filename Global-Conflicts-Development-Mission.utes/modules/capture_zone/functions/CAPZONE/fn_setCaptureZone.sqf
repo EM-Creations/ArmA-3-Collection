@@ -199,4 +199,4 @@ private _oldOwner = ["temp",0,9999];
 		};
 		_oldOwner = _currentOwner;
 		_end = _start;
-}, _interval, [_end, _markerCount, _oldOwner, _messages, _marker, _colours, _timer, _countforwins]] call CBA_fnc_addPerFrameHandler;;
+}, _interval, [_end, _markerCount, _oldOwner, _messages, _marker, _colours, _timer, _countforwins]] call CBA_fnc_addPerFrameHandler;

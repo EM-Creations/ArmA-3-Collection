@@ -8,11 +8,11 @@ class EditorData
 	toggles=1029;
 	class ItemIDProvider
 	{
-		nextID=82;
+		nextID=84;
 	};
 	class MarkerIDProvider
 	{
-		nextID=19;
+		nextID=21;
 	};
 	class Camera
 	{
@@ -566,7 +566,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=39;
 		class Item0
 		{
 			dataType="Group";
@@ -1805,6 +1805,17 @@ class Mission
 			};
 			id=80;
 			atlOffset=-1.9073486e-006;
+		};
+		class Item38
+		{
+			dataType="Marker";
+			position[]={3574.2131,19,3611.6353};
+			name="marker_20";
+			markerType="RECTANGLE";
+			type="";
+			a=20.746704;
+			b=18.251221;
+			id=83;
 		};
 	};
 	class Connections
