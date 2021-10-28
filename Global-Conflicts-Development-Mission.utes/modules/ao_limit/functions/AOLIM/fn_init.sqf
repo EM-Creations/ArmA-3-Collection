@@ -18,22 +18,21 @@ GVAR(markers) apply {
 	};
 };
 
-diag_log format ["INFO: Processing markers = %1", _processingMarkers];
+/* diag_log format ["INFO: Processing markers = %1", _processingMarkers]; */
 
 private _delay = 0.1;
 [{
-	params ["_vehicle1", "_processingMarkers1", "_allowedOutside1", "_pos1"];
+	(_this select 0) params ["_vehicle1", "_processingMarkers1", "_allowedOutside1", "_pos1"];
 	_vehicle1 = (vehicle player);
 
-	if (!(_vehicle isKindOf "Air")) then {
+	if !(_vehicle1 isKindOf "Air") then {
 		private _outSide = true;
 		_processingMarkers1 apply {
-			if (_vehicle1 inArea  _x) exitWith {
+			if (_vehicle1 inArea _x) exitWith {
 				_outSide = false;
 			};
 		};
 
-		diag_log format ["INFO: Outisde AO? = %1", _outSide];
 		if (_outSide) then {
 			if (!(_allowedOutside1) && (_vehicle1 call EFUNC(FW,isAlive)) && local _vehicle1) then {
 				_vehicle1 setPosATL _pos1;
