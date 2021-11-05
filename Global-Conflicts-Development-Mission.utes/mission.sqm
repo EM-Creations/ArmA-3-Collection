@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1669;
+	toggles=1541;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -1274,7 +1274,7 @@ class Mission
 		class Item17
 		{
 			dataType="Marker";
-			position[]={3573.9431,19,3610.168};
+			position[]={3574,19,3610};
 			name="marker_setup";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -1845,7 +1845,7 @@ class Mission
 		class Item38
 		{
 			dataType="Marker";
-			position[]={3574.2131,19,3611.6353};
+			position[]={3574,19,3611};
 			name="marker_20";
 			markerType="RECTANGLE";
 			type="";
