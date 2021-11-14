@@ -45,8 +45,10 @@ case (package + "SL"): {
 	ADD_GROUP(IFAK);
 	ADD_GROUP(items);
 
-	[_unit, _type, ["uk3cb_ak47", "UK3CB_Enfield", "CUP_srifle_M14_DMR", "rhs_weap_m92", "rhs_30Rnd_762x39mm_Savz58_tracer", "CUP_smg_Mac10",
-	 "CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_M", "UK3CB_Enfield_10rnd_Mag_GT", "CUP_30Rnd_45ACP_MAC10_M", "CUP_20Rnd_TE1_Green_Tracer_762x51_DMR", "rhs_30Rnd_762x39mm_Savz58_tracer"], "", 6] call EFUNC(WEPHELP,addWeapon);
+	/* [_unit, ["uk3cb_ak47", "UK3CB_Enfield", "CUP_srifle_M14_DMR", "rhs_weap_m92", "rhs_30Rnd_762x39mm_Savz58_tracer", "CUP_smg_Mac10",
+	 "CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_M", "UK3CB_Enfield_10rnd_Mag_GT", "CUP_30Rnd_45ACP_MAC10_M", "CUP_20Rnd_TE1_Green_Tracer_762x51_DMR", "rhs_30Rnd_762x39mm_Savz58_tracer"], "", 6] call EFUNC(WEPHELP,addWeapon); */
+
+	 [_unit, ["rhs_weap_minimi_para_railed", "CUP_muzzle_mfsup_Flashhider_556x45_Black", "rhs_acc_perst3", "rhs_acc_1p87", "rhsusf_100Rnd_556x45_M855_soft_pouch", "rhsusf_acc_saw_bipod"], "", 6] call EFUNC(WEPHELP,addWeapon);
 
 	/* ["ACE_Vector"] call FUNC(AddItem);
 
