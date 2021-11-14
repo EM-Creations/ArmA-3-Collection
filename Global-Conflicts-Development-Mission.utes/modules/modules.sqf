@@ -41,6 +41,7 @@ Additional modules that can be enabled by removing the //
 #include "kobld_ai_tasks\root.sqf"
 #include "kobld_billboards\root.sqf"
 //#include "kobld_daylight\root.sqf"
+#include "kobld_snow\root.sqf"
 //#include "marker_control\root.sqf"
 //#include "grad-fortifications\root.sqf"
 //#include "setup_timer\root.sqf"
