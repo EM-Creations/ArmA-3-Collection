@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=87;
+		nextID=89;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3568.8794,62.24654,3552.4624};
-		dir[]={0.37207443,-0.90217662,0.21832465};
-		up[]={0.77810746,0.43138093,0.45657563};
-		aside[]={0.50609267,1.4994293e-007,-0.86249506};
+		pos[]={3586.21,50.520725,3575.519};
+		dir[]={-0.80338931,-0.56506795,0.18778664};
+		up[]={-0.55023652,0.82504439,0.12861395};
+		aside[]={0.22760794,-7.4505806e-009,0.97375286};
 	};
 };
 binarizationWanted=0;
@@ -68,13 +68,14 @@ addons[]=
 	"A3_Misc_F_Helpers",
 	"A3_Armor_F_Beta_APC_Wheeled_01",
 	"ace_vehicle_damage",
-	"acre_sys_intercom"
+	"acre_sys_intercom",
+	"A3_Props_F_Enoch_Military_Equipment"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=35;
+		items=36;
 		class Item0
 		{
 			className="A3_Characters_F_Enoch";
@@ -310,6 +311,13 @@ class AddonsMetaData
 			name="ACRE2 - Vehicle Intercom";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
+		};
+		class Item35
+		{
+			className="A3_Props_F_Enoch";
+			name="Arma 3 Contact Platform - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -602,7 +610,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=38;
+		items=40;
 		class Item0
 		{
 			dataType="Group";
@@ -1832,6 +1840,41 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item38
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3569,19.250086,3609};
+				angles[]={0,3.826355,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="BlueBoard";
+			};
+			id=87;
+			type="Land_MultiScreenComputer_01_sand_F";
+		};
+		class Item39
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3548.584,19.206104,3575.6006};
+				angles[]={6.2731848,3.1553109,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="RedBoard";
+			};
+			id=88;
+			type="Land_MultiScreenComputer_01_sand_F";
+			atlOffset=1.9073486e-006;
 		};
 	};
 	class Connections
