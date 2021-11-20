@@ -6,3 +6,5 @@ GVAR(opforIsReady) = false;
 GVAR(missionStarter) = false;
 
 [] call FUNC(missionStarter);
+
+#include "settings.sqf"

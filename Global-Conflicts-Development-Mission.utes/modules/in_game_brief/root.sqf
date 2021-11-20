@@ -8,7 +8,8 @@
 
 #ifdef description_XEH_PostInit
 	class COMPONENT {
-		clientInit = "'' call compile preprocessFileLineNumbers 'modules\in_game_brief\postInitServer.sqf'";
+		clientInit = "'' call compile preprocessFileLineNumbers 'modules\in_game_brief\postInitClient.sqf'";
+		serverInit = "'' call compile preprocessFileLineNumbers 'modules\in_game_brief\postInitServer.sqf'";
 	};
 #endif
 

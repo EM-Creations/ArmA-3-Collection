@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=89;
+		nextID=91;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3586.21,50.520725,3575.519};
-		dir[]={-0.80338931,-0.56506795,0.18778664};
-		up[]={-0.55023652,0.82504439,0.12861395};
-		aside[]={0.22760794,-7.4505806e-009,0.97375286};
+		pos[]={3584.2319,56.817078,3537.2236};
+		dir[]={-0.16291727,-0.46174204,0.87192458};
+		up[]={-0.084807836,0.88701427,0.45388699};
+		aside[]={0.98298824,7.4505806e-009,0.18366928};
 	};
 };
 binarizationWanted=0;
@@ -610,7 +610,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=40;
+		items=42;
 		class Item0
 		{
 			dataType="Group";
@@ -1875,6 +1875,28 @@ class Mission
 			id=88;
 			type="Land_MultiScreenComputer_01_sand_F";
 			atlOffset=1.9073486e-006;
+		};
+		class Item40
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3575,19,3610};
+			};
+			name="barrier1";
+			id=89;
+			type="Logic";
+		};
+		class Item41
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3242.907,16.03927,3655.335};
+			};
+			name="barrierChecker";
+			id=90;
+			type="Logic";
 		};
 	};
 	class Connections

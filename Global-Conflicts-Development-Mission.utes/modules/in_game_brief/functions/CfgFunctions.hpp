@@ -8,6 +8,8 @@ class COMPONENT {
 		class missionConfirmedBlu {};
 		class missionConfirmedRed {};
 		class missionStarter {};
+		class register {};
+		class setup {};
 		class startTheMissionBlu {};
 		class startTheMissionRed {};
 	};
