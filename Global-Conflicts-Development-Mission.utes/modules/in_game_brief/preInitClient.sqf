@@ -2,4 +2,4 @@
 
 private _version = 0.1;
 
-["In-game Brief", "Allows players to brief in-game.", "BlackHawk &amp; StatusRed", _version] call EFUNC(FW,RegisterModule);
+["In-game Brief", "Allows players to brief in-game.", "StatusRed", _version] call EFUNC(FW,RegisterModule);
