@@ -1,11 +1,9 @@
-["Call Mission", "Adds a new sections to the framework menu that allows COs and admins to call the mission.", "Starfox64"] call FUNC(RegisterModule);
-
 FW_MissionCalls = [];
 FW_COC = [];
 
 if (isServer) then {
 
-	FNC_CallMission = {
+	/* FNC_CallMission = {
 
 		params [
 			["_player", objNull, [objNull]],
@@ -37,7 +35,7 @@ if (isServer) then {
 
 		} forEach FW_MissionCalls;
 
-	};
+	}; */
 
 	FW_CallMissionEh = ["frameworkCallMission", {_this spawn FNC_CallMission;}] call CBA_fnc_addEventHandler;
 
@@ -109,7 +107,7 @@ if (!isDedicated) then {
 		}];
 	};
 
-	FNC_CallMissionReq = {
+	/* FNC_CallMissionReq = {
 
 		params [
 			["_callID", "", [""]],
@@ -122,11 +120,11 @@ if (!isDedicated) then {
 
 		["frameworkCallMission", [player, _callID]] call CBA_fnc_globalEvent;
 
-	};
+	}; */
 
 };
 
-FNC_RegisterMissionCall = {
+/* FNC_RegisterMissionCall = {
 
 	params [
 		["_callID", "", [""]],
@@ -137,9 +135,9 @@ FNC_RegisterMissionCall = {
 
 	FW_MissionCalls set [count FW_MissionCalls, [_callID, _callSide, _callName, _callArgs]];
 
-};
+}; */
 
-FNC_RegisterCOC = {
+/* FNC_RegisterCOC = {
 
 	params [
 		["_side", sideUnknown, [sideUnknown]],
@@ -148,7 +146,7 @@ FNC_RegisterCOC = {
 
 	FW_COC set [count FW_COC, [_side, _coc]];
 
-};
+}; */
 
 // Admin Call Options
 ["AdminBLUFOR", sideUnknown, "Call Mission BLUFOR Victory", [[west, "AdminCalled", true], [east, "AdminCalled", false], [independent, "AdminCalled", false], [civilian, "AdminCalled", false]]] call FNC_RegisterMissionCall;
