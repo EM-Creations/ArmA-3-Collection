@@ -3,51 +3,38 @@
 GVAR(MissionCalls) = [];
 GVAR(COC) = [];
 
-GVAR(CallMissionEh) = ["frameworkCallMission", {_this spawn FUNC(CallMission);}] call CBA_fnc_addEventHandler;
+GVAR(CallMissionEh) = ["frameworkCallMission", {_this call FUNC(CallMission);}] call CBA_fnc_addEventHandler;
 
-[] spawn {
+private _waitTime = 60;
+[{
+	GVAR(COC) apply {
+		private _coc = _x;
+		private _found = false;
 
-	private ["_coc", "_groupID", "_group", "_found"];
+		(_coc select 1) apply {
+			private _groupID = _x;
 
-	while {true} do {
-		GVAR(COC) apply {
+			if (_found) exitWith {};
 
-			_coc = _x;
-			_found = false;
+				allGroups apply {
+					private _group = _x;
 
-			(_coc select 1) apply {
-				_groupID = _x;
+					if (_group != grpNull && (groupID _group) == _groupID && (side leader _group) == (_coc select 0)) exitWith {
+						if !((leader _group) getVariable ["FW_IsCO", false]) then {
+							(leader _group) setVariable ["FW_IsCO", true, false];
 
-				if (_found) exitWith {};
-
-					allGroups apply {
-						_group = _x;
-
-						if (_group != grpNull && (groupID _group) == _groupID && (side leader _group) == (_coc select 0)) exitWith {
-
-							if !((leader _group) getVariable ["FW_IsCO", false]) then {
-
-								(leader _group) setVariable ["FW_IsCO", true, false];
-
-								playableUnits apply {
-									if (((side _x) == (side leader _group)) && _x != (leader _group)) then {
-										_x setVariable ["FW_IsCO", false, false];
-									};
+							playableUnits apply {
+								if (((side _x) == (side leader _group)) && _x != (leader _group)) then {
+									_x setVariable ["FW_IsCO", false, false];
 								};
 							};
-
-							_found = true;
-
 						};
+						_found = true;
 					};
-
-			};
-
+				};
 		};
-
-		sleep(60);
 	};
-};
+} , _waitTime, []] call CBA_fnc_addPerFrameHandler;
 
 // Admin Call Options
 ["AdminBLUFOR", sideUnknown, "Call Mission BLUFOR Victory", [[west, "AdminCalled", true], [east, "AdminCalled", false], [independent, "AdminCalled", false], [civilian, "AdminCalled", false]]] call FUNC(RegisterMissionCall);

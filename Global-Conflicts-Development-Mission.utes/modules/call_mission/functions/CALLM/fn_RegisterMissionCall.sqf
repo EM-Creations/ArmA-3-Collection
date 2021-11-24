@@ -7,4 +7,4 @@ params [
 	["_callArgs", [], [[]]]
 ];
 
-GVAR(MissionCalls) set [count GVAR(MissionCalls), [_callID, _callSide, _callName, _callArgs]];
+GVAR(MissionCalls) pushBack [_callID, _callSide, _callName, _callArgs];

@@ -6,9 +6,7 @@ private _version = 0.1;
 
 GVAR(IsAdmin) = false;
 
-[] spawn {
-  waituntil {!isnull (finddisplay 46)};
-
+[{!isnull (finddisplay 46)}, {
   // serverCommandAvailable must be executed from a UI Eh.
   (findDisplay 46) displayAddEventHandler ["MouseMoving", {
     if (serverCommandAvailable "#kick") then {
@@ -17,11 +15,12 @@ GVAR(IsAdmin) = false;
       GVAR(IsAdmin) = false;
     };
   }];
-};
+}, []] call CBA_fnc_waitUntilAndExecute;
 
 if (!isDedicated) then {
-	[] spawn {
-		sleep (0.1);
+  private _sleepTime = 0.1;
+  
+  [{
 		#include "menu.sqf"
-	};
+  }, [], _sleepTime] call CBA_fnc_waitAndExecute;
 };

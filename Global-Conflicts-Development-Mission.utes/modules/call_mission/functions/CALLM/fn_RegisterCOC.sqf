@@ -5,4 +5,4 @@ params [
 	["_coc", [], [[]]]
 ];
 
-GVAR(COC) set [count GVAR(COC), [_side, _coc]];
+GVAR(COC) pushBack [_side, _coc];
