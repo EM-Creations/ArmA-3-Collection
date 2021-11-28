@@ -11,4 +11,4 @@
 //[ANY, "entireAO"] call FUNC(addAOMarker);
 //[east, "Kavala"] call FUNC(addAOMarker);
 
-[blufor, "marker_20"] call FUNC(addAOMarker);
+[blufor, "marker_AO"] call FUNC(addAOMarker);
