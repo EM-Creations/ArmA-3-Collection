@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=517;
+	toggles=513;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3582.3926,70.902344,3544.8521};
-		dir[]={-0.091056578,-0.55698353,0.82551885};
-		up[]={-0.061066255,0.83052295,0.55362713};
-		aside[]={0.99397326,9.1658876e-009,0.1096374};
+		pos[]={4220.584,71.76712,3214.3521};
+		dir[]={0.71873641,-0.39504308,0.57216185};
+		up[]={0.30906281,0.91866589,0.24603669};
+		aside[]={0.62282026,9.2200935e-007,-0.78237104};
 	};
 };
 binarizationWanted=0;
@@ -784,7 +784,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3562.2097,19.001438,3611.8499};
+						position[]={4260.0669,33.090355,3245.375};
 					};
 					side="West";
 					flags=5;
