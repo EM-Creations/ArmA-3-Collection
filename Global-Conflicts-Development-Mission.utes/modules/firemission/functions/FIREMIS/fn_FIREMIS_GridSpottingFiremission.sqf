@@ -2,6 +2,7 @@
 
 _this spawn
 {
+  /* diag_log format ["INFO: Grid spotting firemission! _this =  %1", _this]; */
   private _unit = _this select 0;
   private _target = _this select 1;
   private	_roundType = _this select 2;
@@ -18,9 +19,13 @@ _this spawn
   private _waitTime = (_fireRate * (_unit getVariable [VAR_SART_ARTFIRERATE,MEANFIRERATE]));
 
   [{
-    [_this, objNULL] call FUNC(FIREMIS_Dia_SetArtyCaller);
-    [_this, false] call FUNC(FIREMIS_Dia_SetArtyReadyStatus);
-  },
-  _unit, _waitTime] call CBA_fnc_waitAndExecute;
+    /* diag_log format ["INFO: Wait and execute _this =  %1", _this]; */
+    _this params ["_unit", "_target", "_roundType"];
+    [_unit, objNULL] call FUNC(FIREMIS_Dia_SetArtyCaller);
+    [_unit, false] call FUNC(FIREMIS_Dia_SetArtyReadyStatus);
+    private _roundClassName = ((_unit call FUNC(FIREMIS_Dia_GetArtyAmmo)) select _roundType) select 0;
+
+    [_unit, _target, _roundClassName] call FUNC(FIREMIS_InternalSpottingFiremission);
+  }, [_unit, _target, _roundType], _waitTime] call CBA_fnc_waitAndExecute;
 
 };

@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-INFO("INFO: In FIREMIS_Dia_IsArtyAvailable");
+/* INFO("INFO: In FIREMIS_Dia_IsArtyAvailable"); */
 
 params [
   ["_unit", objNull, [objNull]]

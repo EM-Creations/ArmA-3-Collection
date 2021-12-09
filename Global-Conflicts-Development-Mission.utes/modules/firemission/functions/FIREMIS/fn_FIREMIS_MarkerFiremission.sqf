@@ -12,7 +12,7 @@ if (isServer) then
       private	_minSpottedDistance = _this select 5;
       private	_roundType = _this select 6;
       private	_fireRate = _unit call FUNC(FIREMIS_ArtGetFireRate);
-      private _roundClassName = ((_unit call FUNC(FIREMIS_Dia_GetArtyAmmo)) select _roundType) select 0 ;
+      private _roundClassName = ((_unit call FUNC(FIREMIS_Dia_GetArtyAmmo)) select _roundType) select 0;
       [_unit , true] call FUNC(FIREMIS_Dia_SetArtyReadyStatus);
       diag_log format ["INFO: _this = %1", _this];
       _unit setVariable [VAR_SART_ARTFMTEXT,_this call FUNC(FIREMIS_GetPointFiremissionText),true];
