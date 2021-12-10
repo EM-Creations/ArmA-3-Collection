@@ -4,6 +4,7 @@ if (isServer) then
 {
   private _handle = _this spawn
   {
+      /* INFO("In marker firemission!"); */
       private _unit = _this select 0;
       private	_targetMarker = _this select 1;
       private	_burstCount = _this select 2;
@@ -14,7 +15,7 @@ if (isServer) then
       private	_fireRate = _unit call FUNC(FIREMIS_ArtGetFireRate);
       private _roundClassName = ((_unit call FUNC(FIREMIS_Dia_GetArtyAmmo)) select _roundType) select 0;
       [_unit , true] call FUNC(FIREMIS_Dia_SetArtyReadyStatus);
-      diag_log format ["INFO: _this = %1", _this];
+      /* diag_log format ["INFO: _this = %1", _this]; */
       _unit setVariable [VAR_SART_ARTFMTEXT,_this call FUNC(FIREMIS_GetPointFiremissionText),true];
       [_unit, 0,_burstCount * _burstSize] call FUNC(FIREMIS_Dia_SetArtyFiremissionRoundsRequired);
 
