@@ -1,11 +1,11 @@
 //AUTHOR: Olsen
 //
-//[this, "USMCRiflePlatoon_SL"] call FUNC(GearScript);
-//[this, "USMCRiflePlatoon_TL"] call FUNC(GearScript);
-//[this, "USMCRiflePlatoon_AR"] call FUNC(GearScript);
-//[this, "USMCRiflePlatoon_MD"] call FUNC(GearScript);
-//[this, "USMCRiflePlatoon_RF"] call FUNC(GearScript);
-//[this, "USMCRiflePlatoon_RFAT"] call FUNC(GearScript);
+//[this, "USMCRiflePlatoon_SL"] call FW_fnc_GearScript;
+//[this, "USMCRiflePlatoon_TL"] call FW_fnc_GearScript;
+//[this, "USMCRiflePlatoon_AR"] call FW_fnc_GearScript;
+//[this, "USMCRiflePlatoon_MD"] call FW_fnc_GearScript;
+//[this, "USMCRiflePlatoon_RF"] call FW_fnc_GearScript;
+//[this, "USMCRiflePlatoon_RFAT"] call FW_fnc_GearScript;
 
 #define package "USMCRiflePlatoon_"
 

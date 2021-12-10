@@ -1,18 +1,18 @@
 // BY REDDISH_RED
 
 /*
-[this, "RU_RF"] call FUNC(GearScript); - Rifleman
-[this, "RU_MG"] call FUNC(GearScript); - MachineGunner
-[this, "RU_AR"] call FUNC(GearScript); - Auto-rifleman
-[this, "RU_GP"] call FUNC(GearScript); - Grenadier
-[this, "RU_SL"] call FUNC(GearScript); - Squad Leader/Platoon Leader
-[this, "RU_TL"] call FUNC(GearScript); - Team Leader
-[this, "RU_MED"] call FUNC(GearScript); - Medic
-[this, "RU_MKS"] call FUNC(GearScript); - Marksman
-[this, "RU_AT"] call FUNC(GearScript); - Anti-Tank
-[this, "RU_ATA"] call FUNC(GearScript); - Anti-Tank Assistant
-[this, "RU_COM"] call FUNC(GearScript); - Vehicle Commander
-[this, "RU_CRW"] call FUNC(GearScript); - Vehicle Crew
+[this, "RU_RF"] call FW_fnc_GearScript; - Rifleman
+[this, "RU_MG"] call FW_fnc_GearScript; - MachineGunner
+[this, "RU_AR"] call FW_fnc_GearScript; - Auto-rifleman
+[this, "RU_GP"] call FW_fnc_GearScript; - Grenadier
+[this, "RU_SL"] call FW_fnc_GearScript; - Squad Leader/Platoon Leader
+[this, "RU_TL"] call FW_fnc_GearScript; - Team Leader
+[this, "RU_MED"] call FW_fnc_GearScript; - Medic
+[this, "RU_MKS"] call FW_fnc_GearScript; - Marksman
+[this, "RU_AT"] call FW_fnc_GearScript; - Anti-Tank
+[this, "RU_ATA"] call FW_fnc_GearScript; - Anti-Tank Assistant
+[this, "RU_COM"] call FW_fnc_GearScript; - Vehicle Commander
+[this, "RU_CRW"] call FW_fnc_GearScript; - Vehicle Crew
 */
 
 #define package "RU_"
@@ -133,7 +133,7 @@ case (package + "RF"): { // Rifleman
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
 	["rhs_weap_rpg26"] call FUNC(AddItem);
-	
+
 	[_unit, ["rhs_weap_ak74mr","rhs_weap_ak74m_zenitco01","rhs_acc_okp7_dovetail","rhs_acc_ekp8_02","rhs_acc_1p63","rhs_acc_perst3","rhs_acc_dtk3","rhs_acc_grip_ffg2","rhs_acc_grip_rk2","rhs_acc_grip_rk6","rhs_30Rnd_545x39_7N22_AK","rhs_acc_rakurspm","rhs_acc_1p87","rhs_acc_ekp8_18","rhs_acc_okp7_picatinny","rhs_weap_ak74mr","rhs_acc_uuk"], "vest", 8] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"backpack"] call FUNC(AddItem);
 };
@@ -143,7 +143,7 @@ case (package + "MG"): { // Machinegunner
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["CUP_lmg_Pecheneg_top_rail_B50_vfg","rhs_acc_rakurspm","rhs_acc_1p87","rhs_acc_ekp8_18","rhs_acc_okp7_picatinny","rhs_acc_perst3","rhs_100Rnd_762x54mmR_7N26","CUP_lmg_Pecheneg_B50_vfg","rhs_acc_ekp8_02","rhs_acc_okp7_dovetail","rhs_acc_pkas","rhs_acc_1p63","cup_muzzle_mfsup_flashhider_pk_black","rhs_acc_perst3"], "vest", 2] call EFUNC(WEPHELP,addWeapon);
 	["rhs_100Rnd_762x54mmR_green",2,"backpack"] call FUNC(AddItem);
 	["rhs_100Rnd_762x54mmR_7N26",2,"backpack"] call FUNC(AddItem);
@@ -154,7 +154,7 @@ case (package + "AR"): { // RPK-74M Gunner
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["rhs_weap_rpk74m","rhs_acc_1p63","rhs_acc_ekp8_02","rhs_acc_okp7_dovetail","rhs_acc_pkas","rhs_weap_rpk74m_npz","rhs_acc_rakurspm","rhs_acc_1p87","rhs_acc_ekp8_18","rhs_acc_okp7_picatinny","rhs_60Rnd_545X39_7N22_AK","rhs_acc_perst1ik","rhs_acc_uuk"], "vest", 6] call EFUNC(WEPHELP,addWeapon);
 	["rhs_60Rnd_545X39_AK_Green",2,"backpack"] call FUNC(AddItem);
 };
@@ -164,7 +164,7 @@ case (package + "GP"): { // Grenadier
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["rhs_weap_ak74m_gp25_npz","rhs_acc_rakurspm","rhs_acc_1p87","rhs_acc_ekp8_18","rhs_acc_okp7_picatinny","rhs_acc_uuk","rhs_30Rnd_545x39_7N22_AK","rhs_weap_ak74mr_gp25","rhs_acc_perst3"], "vest", 6] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"backpack"] call FUNC(AddItem);
 	["rhs_VOG25P",15,"backpack"] call FUNC(AddItem);
@@ -183,7 +183,7 @@ case (package + "SL"): { // Squad Leader/Platoon Leader
 	["ACRE_PRC148",1,"backpack"] call FUNC(AddItem);
 	["UK3CB_BAF_SmokeShellGreen",2,"backpack"] call FUNC(AddItem);
 	["UK3CB_BAF_SmokeShellRed",2,"backpack"] call FUNC(AddItem);
-	
+
 	[_unit, ["rhs_weap_ak74m_zenitco01","rhs_acc_1p29","rhs_acc_perst3","rhs_acc_perst1ik","rhs_acc_uuk","rhs_acc_grip_ffg2","rhs_acc_grip_rk2","rhs_acc_grip_rk6","rhs_30Rnd_545x39_7N22_AK"], "vest", 8] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"backpack"] call FUNC(AddItem);
 	[_unit, ["rhs_weap_pya","rhs_mag_9x19_7n31_17"], "backpack", 4] call EFUNC(WEPHELP,addWeapon);
@@ -198,7 +198,7 @@ case (package + "TL"): { // Team Leader
 	["Laserbatteries",1,"backpack"] call FUNC(AddItem);
 	["UK3CB_BAF_SmokeShellGreen",2,"backpack"] call FUNC(AddItem);
 	["UK3CB_BAF_SmokeShellRed",2,"backpack"] call FUNC(AddItem);
-	
+
 	[_unit, ["rhs_weap_ak74m_zenitco01","rhs_acc_1p29","rhs_acc_perst3","rhs_acc_perst1ik","rhs_acc_uuk","rhs_acc_grip_ffg2","rhs_acc_grip_rk2","rhs_acc_grip_rk6","rhs_30Rnd_545x39_7N22_AK"], "vest", 8] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"backpack"] call FUNC(AddItem);
 	[_unit, ["rhs_weap_pya","rhs_mag_9x19_7n31_17"], "backpack", 4] call EFUNC(WEPHELP,addWeapon);
@@ -209,7 +209,7 @@ case (package + "MED"): { // Medic
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["rhs_weap_ak74mr","rhs_weap_ak74m_zenitco01","rhs_acc_okp7_dovetail","rhs_acc_ekp8_02","rhs_acc_1p63","rhs_acc_perst3","rhs_acc_dtk3","rhs_acc_grip_ffg2","rhs_acc_grip_rk2","rhs_acc_grip_rk6","rhs_30Rnd_545x39_7N22_AK","rhs_acc_rakurspm","rhs_acc_1p87","rhs_acc_ekp8_18","rhs_acc_okp7_picatinny","rhs_weap_ak74mr","rhs_acc_uuk"], "vest", 6] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"backpack"] call FUNC(AddItem);
 	["ACE_surgicalKit",1,"backpack"] call FUNC(AddItem);
@@ -231,7 +231,7 @@ case (package + "MKS"): { // Marksman
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["rhs_weap_svdp_npz","rhs_acc_dh520x56","rhs_acc_tgpv2","rhs_10Rnd_762x54mmR_7N14"], "vest", 12] call EFUNC(WEPHELP,addWeapon);
 	["ACE_10Rnd_762x54_Tracer_mag",2,"backpack"] call FUNC(AddItem);
 	[_unit, ["rhs_weap_pya","rhs_mag_9x19_7n31_17"], "backpack", 4] call EFUNC(WEPHELP,addWeapon);
@@ -242,7 +242,7 @@ case (package + "AT"): { // Anti-Tank
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["rhs_weap_ak74mr","rhs_weap_ak74m_zenitco01","rhs_acc_okp7_dovetail","rhs_acc_ekp8_02","rhs_acc_1p63","rhs_acc_perst3","rhs_acc_dtk3","rhs_acc_grip_ffg2","rhs_acc_grip_rk2","rhs_acc_grip_rk6","rhs_30Rnd_545x39_7N22_AK","rhs_acc_rakurspm","rhs_acc_1p87","rhs_acc_ekp8_18","rhs_acc_okp7_picatinny","rhs_weap_ak74mr","rhs_acc_uuk"], "vest", 6] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"vest"] call FUNC(AddItem);
 	["rhs_weap_rpg7"] call FUNC(AddItem);
@@ -256,7 +256,7 @@ case (package + "ATA"): { // Anti-Tank Assistant
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["rhs_weap_ak74mr","rhs_weap_ak74m_zenitco01","rhs_acc_okp7_dovetail","rhs_acc_ekp8_02","rhs_acc_1p63","rhs_acc_perst3","rhs_acc_dtk3","rhs_acc_grip_ffg2","rhs_acc_grip_rk2","rhs_acc_grip_rk6","rhs_30Rnd_545x39_7N22_AK","rhs_acc_rakurspm","rhs_acc_1p87","rhs_acc_ekp8_18","rhs_acc_okp7_picatinny","rhs_weap_ak74mr","rhs_acc_uuk"], "vest", 6] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"vest"] call FUNC(AddItem);
 	["rhs_rpg7_PG7VM_mag",2,"backpack"] call FUNC(AddItem);
@@ -271,7 +271,7 @@ case (package + "COM"): { // Rifleman
 	["ACRE_PRC148",1,"backpack"] call FUNC(AddItem);
 	["rhs_pdu4"] call FUNC(AddItem);
 	["Laserbatteries",1,"backpack"] call FUNC(AddItem);
-	
+
 	[_unit, ["rhs_weap_aks74un","rhs_acc_1p63","rhs_acc_ekp8_02","rhs_acc_okp7_dovetail","rhs_acc_pkas","rhs_acc_uuk","rhs_30Rnd_545x39_7N22_AK"], "vest", 4] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"backpack"] call FUNC(AddItem);
 };
@@ -281,10 +281,7 @@ case (package + "CRW"): { // Rifleman
 	ADD_GROUP(items);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(NADES);
-	
+
 	[_unit, ["rhs_weap_aks74un","rhs_acc_1p63","rhs_acc_ekp8_02","rhs_acc_okp7_dovetail","rhs_acc_pkas","rhs_acc_uuk","rhs_30Rnd_545x39_7N22_AK"], "vest", 4] call EFUNC(WEPHELP,addWeapon);
 	["rhs_30Rnd_545x39_AK_plum_green",2,"backpack"] call FUNC(AddItem);
 };
-
-
-
