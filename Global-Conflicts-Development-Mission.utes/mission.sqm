@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3500.2341,90.511993,3265.8103};
-		dir[]={0.80906224,-0.48617446,0.33026606};
-		up[]={0.45011964,0.87385815,0.18374252};
-		aside[]={0.37793893,-2.0838343e-007,-0.9258461};
+		pos[]={3572.821,77.154877,3539.0317};
+		dir[]={0.0055585825,-0.5122816,0.85879958};
+		up[]={0.0033156748,0.85881758,0.51227093};
+		aside[]={0.99997914,0,-0.0064723673};
 	};
 };
 binarizationWanted=0;
@@ -656,6 +656,7 @@ class Mission
 						rank="LIEUTENANT";
 						init="[this, ""USMCRiflePlatoon_SL""] call FW_fnc_GearScript;" \n "[this, ""BLUE""] call FW_fnc_SOTC_SetTeamColor;" \n "[this, [""ru"", ""fr""]] call FW_fnc_ACRES_SetLanguages;" \n "[this, 1] call FW_fnc_ACEM_assignMedic;" \n "[this,[m109, mortar]] call FW_fnc_FIREMIS_ArtMakePlayerObserver;" \n "this setvariable [""StartInVehicle"",[veh1]];";
 						name="test_unit";
+						description="Test Unit@testers";
 						isPlayer=1;
 						class Inventory
 						{
@@ -807,14 +808,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4260.0669,33.090355,3245.375};
+						position[]={3574.1331,19.001438,3608.481};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
-						rank="COLONEL";
-						init="call{[this, ""YELLOW""] call FW_fnc_SOTC_SetTeamColor;}";
+						rank="SERGEANT";
+						init="[this, ""YELLOW""] call FW_fnc_SOTC_SetTeamColor;";
 						name="leadUnit";
 					};
 					id=14;
@@ -865,7 +866,7 @@ class Mission
 			};
 			class Attributes
 			{
-				name="tester";
+				name="testers";
 			};
 			id=0;
 			class CustomAttributes
@@ -885,7 +886,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Tester";
+							value="Testers";
 						};
 					};
 				};
@@ -1105,7 +1106,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3515.7109,19,3610.792};
+				position[]={3542.759,19,3607.0295};
 			};
 			name="hc_spawn";
 			id=17;
@@ -1123,22 +1124,65 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3504.2012,19.001438,3617.55};
+						position[]={3531.249,19.001438,3613.7881};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						description="1@others";
 					};
 					id=19;
 					type="B_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male11ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3514.8218,19.001438,3623.5889};
+						position[]={3541.8699,19.001438,3619.8264};
 					};
 					side="West";
 					flags=5;
@@ -1151,8 +1195,32 @@ class Mission
 			};
 			class Attributes
 			{
+				name="others";
 			};
 			id=18;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Alpha 1-2";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item12
 		{
@@ -2006,7 +2074,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3580.196,29.686171,3295.7751};
+						position[]={3329.3137,3.1858559,3172.8914};
 					};
 					side="East";
 					flags=7;
@@ -2019,6 +2087,7 @@ class Mission
 					};
 					id=101;
 					type="vn_o_men_nva_14";
+					atlOffset=-7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2048,6 +2117,7 @@ class Mission
 			{
 			};
 			id=100;
+			atlOffset=-7.1525574e-007;
 		};
 		class Item45
 		{
