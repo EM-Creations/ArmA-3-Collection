@@ -39,7 +39,7 @@ Additional modules that can be enabled by removing the //
 #include "firemission\root.sqf"
 //#include "hostage\root.sqf"
 //#include "in_game_brief\root.sqf"
-//#include "kobld_ai_tasks\root.sqf"
+#include "kobld_ai_tasks\root.sqf"
 #include "kobld_billboards\root.sqf"
 //#include "kobld_daylight\root.sqf"
 //#include "kobld_snow\root.sqf"

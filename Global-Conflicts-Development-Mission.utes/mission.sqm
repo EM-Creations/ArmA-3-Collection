@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=126;
+		nextID=130;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3559.3547,85.843033,3513.8232};
-		dir[]={0.11037152,-0.58481663,0.80362159};
-		up[]={0.079573281,0.81116551,0.57937777};
-		aside[]={0.99069989,0,-0.13606535};
+		pos[]={3562.4055,98.340073,3484.6897};
+		dir[]={0.11037154,-0.58481646,0.80362171};
+		up[]={0.079573251,0.81116569,0.57937759};
+		aside[]={0.99069989,7.4505806e-009,-0.13606535};
 	};
 };
 binarizationWanted=0;
@@ -633,7 +633,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=47;
+		items=48;
 		class Item0
 		{
 			dataType="Group";
@@ -2249,6 +2249,51 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item47
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3751.6885,32.673824,3330.8923};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=127;
+					type="vn_o_men_nva_43";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3766.5671,32.220985,3328.7151};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=129;
+					type="vn_o_men_nva_43";
+				};
+			};
+			class Attributes
+			{
+				name="enemyGroup1";
+				init="[this, 4000] call KBAITSK_fnc_taskRush;";
+			};
+			id=126;
 		};
 	};
 	class Connections
