@@ -1,6 +1,7 @@
-class KnockDown {
-	class KnockDown {
-		file = "modules\knock_down\functions\KnockDown";
+class COMPONENT {
+	tag = COMPONENT;
+	class KNCKDN {
+		file = "modules\knock_down\functions\KNCKDN";
 		class KnockDownAction {};
 	};
 };

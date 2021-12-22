@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3562.4055,98.340073,3484.6897};
-		dir[]={0.11037154,-0.58481646,0.80362171};
-		up[]={0.079573251,0.81116569,0.57937759};
-		aside[]={0.99069989,7.4505806e-009,-0.13606535};
+		pos[]={3739.0784,275.63272,2956.332};
+		dir[]={0.0016373099,-0.73103988,0.68233645};
+		up[]={0.001754316,0.68233573,0.73103517};
+		aside[]={1.0000007,-1.0160555e-006,-0.0023988737};
 	};
 };
 binarizationWanted=0;
@@ -2262,7 +2262,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3751.6885,32.673824,3330.8923};
+						position[]={3775.7603,52.637741,3155.8381};
 					};
 					side="East";
 					flags=7;
@@ -2277,7 +2277,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3766.5671,32.220985,3328.7151};
+						position[]={3790.6389,48.116909,3153.6609};
 					};
 					side="East";
 					flags=5;
@@ -2286,6 +2286,7 @@ class Mission
 					};
 					id=129;
 					type="vn_o_men_nva_43";
+					atlOffset=3.8146973e-006;
 				};
 			};
 			class Attributes
