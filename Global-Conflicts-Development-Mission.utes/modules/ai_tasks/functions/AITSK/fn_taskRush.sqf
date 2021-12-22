@@ -1,5 +1,5 @@
 //Modified fnc_taskRush by nKenny
-//[UNIT, DISTANCE] call KBAITSK_fnc_taskRush;
+//[UNIT, DISTANCE] call AITSK_fnc_taskRush;
 
 #include "script_component.hpp"
 

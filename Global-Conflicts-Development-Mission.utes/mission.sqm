@@ -2292,7 +2292,7 @@ class Mission
 			class Attributes
 			{
 				name="enemyGroup1";
-				init="[this, 4000] call KBAITSK_fnc_taskRush;";
+				init="[this, 4000] call AITSK_fnc_taskRush;";
 			};
 			id=126;
 		};
