@@ -46,6 +46,7 @@ Additional modules that can be enabled by removing the //
 //#include "kobld_snow\root.sqf"
 //#include "marker_control\root.sqf"
 //#include "grad-fortifications\root.sqf"
+#include "gas\root.sqf"
 #include "rank_icons\root.sqf"
 //#include "setup_timer\root.sqf"
 //#include "start_in_parachute\root.sqf"
