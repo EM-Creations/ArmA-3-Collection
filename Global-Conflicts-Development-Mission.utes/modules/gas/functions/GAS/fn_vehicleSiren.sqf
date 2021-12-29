@@ -3,24 +3,55 @@
 
 if (!isServer) exitWith {};
 
-sleep 0.5 + (random 5);
+params ["_veh"];
 
-private _veh = _this select 0;
-_veh setVariable ["FW_GAS_VEHALARM_ON", true, true];
+private _waitTime = 0.5 + (random 5);
 
-while {alive _veh} do {
-	GVAR(GASLOGICS) apply {
-		private _shotArea = _x getVariable ["FW_GAS_SHOTAREA", 0];
-		private _timeOut = _x getVariable ["FW_GAS_TIMEOUT", -1];
+[{
+	params ["_veh"];
 
-		if (_timeOut == -1 || _timeOut > time) then {
-			if (_veh distance _x < _shotArea) then {
-				if (_veh getVariable "FW_GAS_VEHALARM_ON") then {
-					[_veh, ["ABCA_M42", 50]] remoteExec ["say3D"];
+	_veh setVariable ["GAS_VEHALARM_ON", true, true];
+
+	private _delay = 0.75;
+
+	/* while {alive _veh} do {
+		GVAR(GASLOGICS) apply {
+			private _shotArea = _x getVariable ["GAS_SHOTAREA", 0];
+			private _timeOut = _x getVariable ["GAS_TIMEOUT", -1];
+
+			if (_timeOut == -1 || _timeOut > time) then {
+				if (_veh distance _x < _shotArea) then {
+					if (_veh getVariable "GAS_VEHALARM_ON") then {
+						[_veh, ["ABCA_M42", 50]] remoteExec ["say3D"];
+					};
+
+					sleep 0.75;
 				};
-
-				sleep 0.75;
 			};
 		};
-	};
-};
+	}; */
+
+	[{
+		params ["_args", "_idPFH"];
+		_args params ["_veh"];
+
+		if (!(alive _veh)) exitWith {
+			[_idPFH] call CBA_fnc_removePerFrameHandler;
+		};
+
+		GVAR(GASLOGICS) apply {
+			private _shotArea = _x getVariable ["GAS_SHOTAREA", 0];
+			private _timeOut = _x getVariable ["GAS_TIMEOUT", -1];
+
+			if (_timeOut == -1 || _timeOut > time) then {
+				if (_veh distance _x < _shotArea) then {
+					if (_veh getVariable "GAS_VEHALARM_ON") then {
+						[_veh, ["ABCA_M42", 50]] remoteExec ["say3D"];
+					};
+
+					/* sleep 0.75; */
+				};
+			};
+		};
+	}, _delay, [_veh]] call CBA_fnc_addPerFrameHandler;
+}, [_veh], _waitTime] call CBA_fnc_waitAndExecute;
