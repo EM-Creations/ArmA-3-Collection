@@ -1,4 +1,3 @@
-// AUTHOR: StatusRed
 #include "script_component.hpp"
 
 if (!isServer) exitWith {};
@@ -14,28 +13,11 @@ private _waitTime = 0.5 + (random 5);
 
 	private _delay = 0.75;
 
-	/* while {alive _veh} do {
-		GVAR(GASLOGICS) apply {
-			private _shotArea = _x getVariable ["GAS_SHOTAREA", 0];
-			private _timeOut = _x getVariable ["GAS_TIMEOUT", -1];
-
-			if (_timeOut == -1 || _timeOut > time) then {
-				if (_veh distance _x < _shotArea) then {
-					if (_veh getVariable "GAS_VEHALARM_ON") then {
-						[_veh, ["ABCA_M42", 50]] remoteExec ["say3D"];
-					};
-
-					sleep 0.75;
-				};
-			};
-		};
-	}; */
-
 	[{
 		params ["_args", "_idPFH"];
 		_args params ["_veh"];
 
-		if (!(alive _veh)) exitWith {
+		if (!(alive _veh) || !(_veh getVariable "GAS_VEHALARM_ON")) exitWith {
 			[_idPFH] call CBA_fnc_removePerFrameHandler;
 		};
 
@@ -48,8 +30,6 @@ private _waitTime = 0.5 + (random 5);
 					if (_veh getVariable "GAS_VEHALARM_ON") then {
 						[_veh, ["ABCA_M42", 50]] remoteExec ["say3D"];
 					};
-
-					/* sleep 0.75; */
 				};
 			};
 		};

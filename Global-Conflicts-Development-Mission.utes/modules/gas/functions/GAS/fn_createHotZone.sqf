@@ -1,4 +1,3 @@
-// AUTHOR: StatusRed
 #include "script_component.hpp"
 
 //Example, to be run only once, SERVER ONLY: ["GAS_CREATEHOTZONE",[position player,100,300]] call CBA_fnc_serverEvent;

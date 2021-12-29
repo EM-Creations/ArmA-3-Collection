@@ -33,19 +33,20 @@ if (!isDedicated && hasInterface) then {
 		}, [], 1] call CBA_fnc_waitAndExecute;
 
 		//Vehicle alarm action
-		private _vehAlarm_toggle_off = ["vehAlarm_off_class", "Turn CBRN Alarm Off", "", {
-			params ["_target", "_player"];
+		vehicles apply {
+			_x setVariable ["GAS_VEHALARM_ON", false, true];
+		};
 
+		private _vehAlarm_toggle_off = ["vehAlarm_off_class", "Turn CBRN Alarm Off", "", {
 			_target setVariable ["GAS_VEHALARM_ON", false, true];
 		}, {
-			([_player, _target, []] call ace_common_fnc_canInteractWith) && (commander _target == _player || gunner _target == _player || driver _target == _player) && _target getVariable "GAS_VEHALARM_ON"
+			([_player, _target, []] call ace_common_fnc_canInteractWith) && (commander _target == _player || gunner _target == _player || driver _target == _player) && (_target getVariable "GAS_VEHALARM_ON")
 		}] call ace_interact_menu_fnc_createAction;
 		["LandVehicle", 1, ["ACE_SelfActions"], _vehAlarm_toggle_off, true] call ace_interact_menu_fnc_addActionToClass;
 
 		private _vehAlarm_toggle_on = ["vehAlarm_on_class", "Turn CBRN Alarm On", "", {
-			params ["_target", "_player"];
-
-			_target setVariable ["GAS_VEHALARM_ON", true, true];
+			/* _target setVariable ["GAS_VEHALARM_ON", true, true]; */
+			_target call FUNC(vehicleSiren);
 		}, {
 			([_player, _target, []] call ace_common_fnc_canInteractWith) && (commander _target == _player || gunner _target == _player || driver _target == _player) && !(_target getVariable "GAS_VEHALARM_ON")
 		}] call ace_interact_menu_fnc_createAction;
@@ -98,6 +99,7 @@ if (!isDedicated && hasInterface) then {
 			GVAR(INTENSITY) = 0;
 			GVAR(BLUR) ppEffectEnable false;
 
+			LOG("Removing GAS frame handler..");
 			[_idPFH] call CBA_fnc_removePerFrameHandler;
 		};
 
@@ -119,9 +121,12 @@ if (!isDedicated && hasInterface) then {
 			};
 		};
 
+		/* LOG_1("AREALIST = %1", GVAR(AREALIST)); */
+		/* LOG_1("INTENSITY = %1", GVAR(INTENSITY)); */
+
 		if (count GVAR(AREALIST) > 0) then {GVAR(INHOTAREA) = true} else {GVAR(INHOTAREA) = false};
 
-		if GVAR(ACTIVE) then {
+		if (GVAR(ACTIVE)) then {
 			if (GVAR(INTENSITY) >= 2 && GVAR(INHOTAREA) && !GVAR(HASMASK)) then {
 				if !(player getVariable "GAS_NEEDSMASK") then {player setVariable ["GAS_NEEDSMASK", true, true]};
 

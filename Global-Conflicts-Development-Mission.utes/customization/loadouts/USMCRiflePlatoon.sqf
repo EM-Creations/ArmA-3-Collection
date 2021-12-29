@@ -40,6 +40,7 @@ END_GROUP;
 case (package + "SL"): {
 
 	["rhsusf_spc_squadleader"] call FUNC(AddItem); //Vest
+	["skn_m50_gas_mask"] call FUNC(AddItem); // Gas mask
 
 	ADD_GROUP(uniform);
 	ADD_GROUP(IFAK);

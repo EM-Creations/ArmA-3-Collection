@@ -36,9 +36,9 @@ GVAR(MASKLIST) = [
 
 GVAR(GAS_BLUR) = ppEffectCreate ["dynamicBlur", -13501];
 
-["GAS_FIREMISSION", FUNC(FIREMISSION)] call CBA_fnc_addEventHandler;
-["GAS_FAKEMISSION", FUNC(FAKEMISSION)] call CBA_fnc_addEventHandler;
-["GAS_CREATEHOTZONE", FUNC(CREATEHOTZONE)] call CBA_fnc_addEventHandler;
-["GAS_GASZONES", FUNC(GASZONES)] call CBA_fnc_addEventHandler;
-["GAS_JIPSEND", FUNC(JIPSEND)] call CBA_fnc_addEventHandler;
-["GAS_GASPARTICLES", FUNC(GASPARTICLES)] call CBA_fnc_addEventHandler;
+["GAS_FIREMISSION", FUNC(fireMission)] call CBA_fnc_addEventHandler;
+["GAS_FAKEMISSION", FUNC(fakeMission)] call CBA_fnc_addEventHandler;
+["GAS_CREATEHOTZONE", FUNC(createHotZone)] call CBA_fnc_addEventHandler;
+["GAS_GASZONES", FUNC(gasZones)] call CBA_fnc_addEventHandler;
+["GAS_JIPSEND", FUNC(jipSend)] call CBA_fnc_addEventHandler;
+["GAS_GASPARTICLES", FUNC(gasParticles)] call CBA_fnc_addEventHandler;
