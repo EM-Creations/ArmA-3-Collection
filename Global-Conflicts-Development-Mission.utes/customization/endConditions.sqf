@@ -1,10 +1,10 @@
 private _westCasualty = "USMC" call FUNC(CasualtyPercentage); //Gets the casualty percentage of team "USMC"
 private _eastCasualty = "VDV" call FUNC(CasualtyPercentage); //Gets the casualty percentage of team "VDV"
 private _extracted = ["USMC", "marker_capture", 0.1] call FUNC(hasExtracted);
-diag_log format ["INFO: _extracted = %1", _extracted];
+/* diag_log format ["INFO: _extracted = %1", _extracted]; */
 
 if (_westCasualty >= 50) exitWith {
-	"VDV VICTORY<br />USMC has retreated due to casualties." call FUNC(EndMission);
+	/* "VDV VICTORY<br />USMC has retreated due to casualties." call FUNC(EndMission); */
 };
 
 if (_eastCasualty >= 75) exitWith {
