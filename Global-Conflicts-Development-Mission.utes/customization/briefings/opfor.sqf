@@ -1,7 +1,7 @@
 NEWTAB("I. Situation:")
 <font color='#BBBBBB' size='16' face='PuristaBold'>This is an example header:</font><br/>
 <br/>
-Example text.<br/>
+Example text Opfor.<br/>
 <br/>
 This is how you create a <marker name='markerName'>marker</marker>.
 ENDTAB;
