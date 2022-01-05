@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={3699.7722,184.33955,3008.2556};
-		dir[]={-0.15531771,-0.50697041,0.84785581};
-		up[]={-0.091351166,0.86196309,0.49867192};
-		aside[]={0.98363173,-4.317917e-008,0.18019015};
+		dir[]={-0.15531774,-0.50696987,0.84785497};
+		up[]={-0.091351189,0.86196381,0.49867171};
+		aside[]={0.98363185,0,0.18019058};
 	};
 };
 binarizationWanted=0;
@@ -1758,7 +1758,7 @@ class Mission
 				class Attribute0
 				{
 					property="ENH_featureTypeNew";
-					expression="_value remoteExec ['setFeatureType', 0, _this]";
+					expression="[_this, _value] remoteExec ['setFeatureType', 0, _this]";
 					class Value
 					{
 						class data

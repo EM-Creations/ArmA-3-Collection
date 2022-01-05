@@ -18,7 +18,7 @@ private _text =  getText (configfile / "CfgMagazines" / (_rounds select 0) / "di
 private	_unitName = _unit call FUNC(FIREMIS_Dia_GetArtyDisplayName);
 
 private _gridPos = "";
-if ((_target isEqualType "") && !((markerShape _target) isEqualTo "")) then {
+if ((_target isEqualType "") && {(markerShape _target) isNotEqualTo ""}) then {
   _gridPos = (mapGridPosition (getMarkerPos _target));
 } else {
   _gridPos = (mapGridPosition _target);
