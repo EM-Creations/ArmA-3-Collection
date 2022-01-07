@@ -2,7 +2,7 @@ GVAR(ServerViewDistance) = 2500; //View distance for the server (the ai's)
 
 GVAR(TimeLimit) = 30; //Time limit in minutes, to disable the time limit set it to 0
 GVAR(TimeLimitMessage) = "TIME LIMIT REACHED!"; //The message displayed when the time runs out
-GVAR(EndConditionFrequency) = 60; // Frequency in seconds that the end conditions are checked
+GVAR(EndConditionFrequency) = 15; // Frequency in seconds that the end conditions are checked
 
 /*
 Time for how long disconnected players should be deleted since mission start (in minutes)
@@ -22,7 +22,7 @@ GVAR(RespawnTickets_East) = 0;
 GVAR(RespawnTickets_Ind) = 0;
 GVAR(RespawnTickets_Civ) = 0;
 
-//Individual Tickets for different sides 
+//Individual Tickets for different sides
 GVAR(IndividualRespawnTickets_West) = 0;
 GVAR(IndividualRespawnTickets_East) = 0;
 GVAR(IndividualRespawnTickets_Ind) = 0;

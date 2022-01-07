@@ -2,6 +2,9 @@ private _westCasualty = "USMC" call FUNC(CasualtyPercentage); //Gets the casualt
 private _eastCasualty = "VDV" call FUNC(CasualtyPercentage); //Gets the casualty percentage of team "VDV"
 private _extracted = ["USMC", "marker_capture", 0.1] call FUNC(hasExtracted);
 /* diag_log format ["INFO: _extracted = %1", _extracted]; */
+LOG_1("Money = %1", [player] call EFUNC(CURRENCY,getCurrencyText));
+[player, 5] call EFUNC(CURRENCY,addCurrency);
+[player, 2.5] call EFUNC(CURRENCY,deductCurrency);
 
 if (_westCasualty >= 50) exitWith {
 	/* "VDV VICTORY<br />USMC has retreated due to casualties." call FUNC(EndMission); */
