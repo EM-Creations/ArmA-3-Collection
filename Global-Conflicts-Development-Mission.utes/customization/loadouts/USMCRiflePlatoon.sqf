@@ -35,7 +35,10 @@ SET_GROUP(items)
 	["ItemWatch"] call FUNC(AddItem);
 	["ACE_MapTools"] call FUNC(AddItem);
 	["ACE_earplugs"] call FUNC(AddItem);
-	["ACE_HandFlare_Yellow", 5] call FUNC(AddItem);
+	["FlareYellow_F", 2] call FUNC(AddItem);
+	["FlareRed_F"] call FUNC(AddItem);
+	["FlareWhite_F"] call FUNC(AddItem);
+	["FlareGreen_F"] call FUNC(AddItem);
 END_GROUP;
 
 case (package + "SL"): {
