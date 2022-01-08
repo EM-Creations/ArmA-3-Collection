@@ -1,7 +1,7 @@
 //Example:["east",[west,east],[300,10]] call FUNC(setCaptureZone);
 //Author:		Sacher
 
-//Definition:	[MARKERNAME,[SIDES],[WINS]] call FUNC(setCaptureZone);
+//Definition:	[[MARKERNAME,[SIDES],[WINS]]] call FUNC(setCaptureZone);
 
 //
 //Description: 	This will make a rectangle or eliptical Marker into a capturezone.
@@ -36,4 +36,4 @@
 
 //["","","","","",""] call FUNC(setMessages);
 
-[["marker_capture", [blufor], [15]]] call FUNC(setCaptureZone);
+/* [["marker_capture", [blufor], [300]]] call FUNC(setCaptureZone); */

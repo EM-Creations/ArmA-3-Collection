@@ -8,6 +8,6 @@
 // DELETE_AFTER_START set to true will delete marker after briefing
 
 // Example:
-[blufor, "markerBlu", true] call FUNC(MRKCON_Add);
-[blufor, "markerBlu2", false] call FUNC(MRKCON_Add);
-[opfor, "markerRed", true] call FUNC(MRKCON_Add);
+// [blufor, "markerBlu", true] call FUNC(MRKCON_Add);
+// [blufor, "markerBlu2", false] call FUNC(MRKCON_Add);
+// [opfor, "markerRed", true] call FUNC(MRKCON_Add);

@@ -82,7 +82,7 @@ GVAR(ACRE_ChannelNames) = [
 //BABEL
 //////////////
 
-GVAR(ACRE_Enable_Babel) = true;
+GVAR(ACRE_Enable_Babel) = false;
 
 /*
  * FW_fnc_ACRES_SetLanguages

@@ -20,13 +20,12 @@ GVAR(ArrayObjects) = [
     "vehnortheast_1",
     "vehnortheast_2",
     "gunship",
-    "cargoheli",
-    "hc_initial_spawn"
+    "cargoheli"
 ];
 
 // Initial spawns are spawned upon init, at the start of the mission.
 // eg: ["mainEnemy"]
-GVAR(InitialSpawn) = ["hc_initial_spawn"];
+GVAR(InitialSpawn) = [];
 
 // Initial random spawns are randomly selected upon init, at the start of the mission according to their weight value.
 // Array is structured with array object name and random selection weight.
@@ -115,3 +114,4 @@ GVAR(WaypointDistance) = 300;
 #include "settings\bunker.hpp"
 #include "settings\skill.hpp"
 #include "settings\sight.hpp"
+

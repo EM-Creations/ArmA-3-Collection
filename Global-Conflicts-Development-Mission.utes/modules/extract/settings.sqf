@@ -25,4 +25,3 @@ Exemples:
 Note: Keep in mind that the script does not wait for dead units to be mounted.
 
  */
- ["B_Heli_Transport_01_F", "spawnMarker", 30, "landMarker", blufor, "extractMarker"] call FUNC(EXTRACT_Extract); // In this situation the helicopter will wait for ALL players to be mounted.

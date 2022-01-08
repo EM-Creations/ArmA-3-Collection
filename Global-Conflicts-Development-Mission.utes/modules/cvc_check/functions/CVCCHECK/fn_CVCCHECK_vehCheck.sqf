@@ -27,7 +27,7 @@ _turretList = allTurrets [_veh,true] - allTurrets [_veh,false];
 if (_veh isKindOf "Tank" || _veh isKindOf "Wheeled_APC_F") then {
 	_vehRole = assignedVehicleRole _unit;
 
-	if (_vehRole select 0 == "turret") then {
+	if (_vehRole select 0 == "Turret") then {
 		if !(_vehRole select 1 in _turretList) then {
 			_valid = true;
 		};

@@ -1,6 +1,4 @@
 //Add a backpack and medical items to a unit. Ex: [this,"usm_pack_m5_medic"] call FW_fnc_ACEM_assignMedicBagUnit;
-private ["_unit", "_type"];
-
 params[
   ["_unit", objNull, [objNull]], //Vehicle to add a medic bag to
   ["_type", "usm_pack_m5_medic", [""]] //Class of backpack to add

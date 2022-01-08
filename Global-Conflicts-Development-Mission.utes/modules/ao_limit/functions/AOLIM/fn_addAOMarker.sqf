@@ -7,7 +7,7 @@ params[
 
 private _markerShape = (markerShape _name);
 
-diag_log format ["INFO: Marker shape = %1", _markerShape];
+//diag_log format ["INFO: Marker shape = %1", _markerShape];
 
 if !(_markerShape isEqualTo "") then {
   GVAR(markers) pushBack [_side, _name];

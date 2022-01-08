@@ -35,7 +35,6 @@ Additional modules that can be enabled by removing the //
 //#include "capture_zone\root.sqf"
 //#include "clicker\root.sqf"
 //#include "cover_map\root.sqf"
-#include "currency\root.sqf"
 //#include "cvc_check\root.sqf"
 //#include "daylight\root.sqf"
 //#include "env_parameters\root.sqf"

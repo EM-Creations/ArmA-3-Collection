@@ -16,11 +16,6 @@ private _addAction = ["ai_driver","Add AI driver","",{
 },{
     (vehicle _player == _target) && {isNull (GETVAR(_target,AD_driver,objnull))} && {((assignedVehicleRole _player) select 0) isEqualTo "turret"} && {GVAR(AD_Vehicle) in [objNull, vehicle _player]}
 }] call ace_interact_menu_fnc_createAction;
-/* private _addAction = ["ai_driver","Add AI driver","",{
-    [_target, _player] call FUNC(AD_CreateUnit);
-},{
-    (vehicle _player == _target)
-}] call ace_interact_menu_fnc_createAction; */
 
 private _removeAction = ["ai_driver","Remove AI driver","",{
     [_target] call FUNC(AD_RemoveUnit);

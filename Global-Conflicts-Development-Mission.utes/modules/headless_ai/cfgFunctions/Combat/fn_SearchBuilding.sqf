@@ -41,7 +41,7 @@ if (count (units _group) > 8) then {
     };
 };
 
-if !(_coverTeam isEqualTo []) then {
+if (_coverTeam isNotEqualTo []) then {
     //set leader and helper to cover
     _coverTeam apply {
         private _unit = _x;
@@ -113,7 +113,7 @@ for "_u" from 0 to ((count _assaultUnits) - 1) step 2 do {
     if ((_waitedTime >= 25) || (_clearedPositions >= _totalPositions) || ((CBA_missionTime - (GETVAR(_building,searched,(CBA_missionTime)))) > 600)) exitWith {
         _units apply {
             _x doFollow leader _x;
-            _x setUnitPos "AUTO";
+            _x setUnitPos "Auto";
         };
         _group lockWP false;
         SETVAR(_group,Mission,_otask);
@@ -151,7 +151,7 @@ for "_u" from 0 to ((count _assaultUnits) - 1) step 2 do {
             _lastTimeChanged = CBA_missionTime;
             _args set [9, _lastTimeChanged];
             //LOG_2("team reached pos: %1 team members: %2",_pos,_members);
-            if !(_positions isEqualTo []) then {
+            if (_positions isNotEqualTo []) then {
                 _pos = _positions deleteAt 0;
                 //"Sign_Arrow_F" createvehicle [_pos select 0, _pos select 1, (_pos select 2) + 2.5];
                 //LOG_2("sending team to pos: %1 remaining positions: %2",_pos,count _positions);

@@ -4,7 +4,7 @@
 //If a unit crash landed outside the AO limit, or a squad is deployed outside the AO limit they are allowed to enter the AO limit but cannot exit.
 
 // The amount of time in seconds a land based unit is allowed to stay outside the AO (-1 = Infinity)
-GVAR(AOTimer) = 10;
+GVAR(AOTimer) = 30;
 // The amount of time in seconds an air based unit is allowed to stay outside the AO (-1 = Infinity)
 GVAR(AOTimerAir) = -1;
 
@@ -13,7 +13,5 @@ GVAR(AOTimerAir) = -1;
 //If you want all teams to have this AO limit use ANY.
 
 //Example:
-//[ANY, "entireAO"] call FUNC(addAOMarker);
 //[east, "Kavala"] call FUNC(addAOMarker);
-
-[blufor, "marker_20"] call FUNC(addAOMarker);
+//[blufor, "marker_20"] call FUNC(addAOMarker);
