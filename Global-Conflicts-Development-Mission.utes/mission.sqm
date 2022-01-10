@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3699.7722,184.33955,3008.2556};
+		pos[]={3692.1912,184.33955,3049.6404};
 		dir[]={-0.15531774,-0.50696987,0.84785497};
 		up[]={-0.091351189,0.86196381,0.49867171};
 		aside[]={0.98363185,0,0.18019058};
