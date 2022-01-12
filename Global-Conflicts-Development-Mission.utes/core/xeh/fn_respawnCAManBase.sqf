@@ -11,4 +11,3 @@ if (isPlayer _unit) then {
 } else {
     [QGVAR(RespawnedEvent), _unit] call CBA_fnc_serverEvent;
 };
-

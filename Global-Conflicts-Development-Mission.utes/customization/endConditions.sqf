@@ -8,7 +8,7 @@ LOG_1("Money = %1", _currentMoney);
 [player, 2.5] call EFUNC(CURRENCY,deductCurrency); */
 
 if (_westCasualty >= 50) exitWith {
-	/* "VDV VICTORY<br />USMC has retreated due to casualties." call FUNC(EndMission); */
+	"VDV VICTORY<br />USMC has retreated due to casualties." call FUNC(EndMission);
 };
 
 if (_eastCasualty >= 75) exitWith {
