@@ -40,4 +40,5 @@
 
 /* ["ColorYellow", "ColorBlue", "ColorGreen", "ColorRed", "ColorWhite", "ColorKhaki"] call FUNC(setColours);
 ["Friends are capturing the zone", "Enemies are capturing the zone", "Resistance is capturing the zone", "Civilian is capturing the zone", "The zone is contested", "The zone is uncontested"] call FUNC(setMessages);
-["marker_capture", [blufor], [300]] call FUNC(setCaptureZone); */
+*/
+["marker_capture", [blufor], [30]] call FUNC(setCaptureZone);

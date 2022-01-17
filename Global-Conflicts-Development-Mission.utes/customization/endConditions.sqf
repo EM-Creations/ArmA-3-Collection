@@ -1,6 +1,9 @@
 private _westCasualty = "USMC" call FUNC(CasualtyPercentage); //Gets the casualty percentage of team "USMC"
 private _eastCasualty = "VDV" call FUNC(CasualtyPercentage); //Gets the casualty percentage of team "VDV"
 private _extracted = ["USMC", "marker_capture", 0.1] call FUNC(hasExtracted);
+private _isCaptured = "marker_capture" call EFUNC(CAPZONE,isCaptured);
+
+LOG_1("Marker zone captured state = %1", _isCaptured);
 /* diag_log format ["INFO: _extracted = %1", _extracted]; */
 /* private _currentMoney = [player, true, true, true] call EFUNC(CURRENCY,getCurrencyText);
 LOG_1("Money = %1", _currentMoney);
