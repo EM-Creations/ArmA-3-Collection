@@ -14,4 +14,13 @@ switch (_type) do {
 		["rhs_weap_m4a1_carryhandle"] call FUNC(AddItemVehicle);
 
 	};
+
+	case "cTabBox": {
+		_vehicle call FUNC(RemoveAllVehicleGear);
+
+		["ItemcTab", 10] call FUNC(AddItemVehicle);
+		["ItemcTabHCam", 10] call FUNC(AddItemVehicle);
+		["ItemAndroid", 10] call FUNC(AddItemVehicle);
+		["ItemMicroDAGR", 10] call FUNC(AddItemVehicle);
+	};
 };
