@@ -1,9 +1,10 @@
 #include "script_component.hpp"
 
-private _guns = _this;
+params[
+  ["_guns", [], [[]]]
+];
 
-if(!(player getVariable [VAR_SART_PLAYERRECEIVEDGUNS,false])) then
-{
+if (!(player getVariable [VAR_SART_PLAYERRECEIVEDGUNS,false]) && {_guns isNotEqualTo []}) then {
   private _action = ["Artillery_Menu", "Artillery Menu", "", {true}, {(count (player getVariable [VAR_SART_OBSGUNS,[]])) > 0}] call ace_interact_menu_fnc_createAction;
   [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 

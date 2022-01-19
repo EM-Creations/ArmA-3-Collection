@@ -1,10 +1,9 @@
 #include "script_component.hpp"
 
-[{CBA_missionTime >= 0},
-{
-  if (local (_this select 0)) exitWith
-  {
-    ["Event_ArtPlayerJipped", _this] call CBA_fnc_serverEvent;
-  };
-},
-_this, 1] call CBA_fnc_waitUntilAndExecute;
+params[
+  ["_unit", objNull, [objNull]],
+  ["_guns", [], [[]]]
+];
+
+/* LOG_2("Setting guns for %1 = %2", _unit, _guns); */
+_unit setVariable [VAR_SART_OBSGUNS, _guns, true];

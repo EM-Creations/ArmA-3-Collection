@@ -5,7 +5,6 @@ class FIREMIS {
 	class FIREMIS_AddEventHandler {};
 	class FIREMIS_ArtGetFireRate {};
 	class FIREMIS_ArtMakePlayerObserver {};
-	class FIREMIS_ArtMakePlayerObserverServer{};
 	class FIREMIS_BracketFiremission {};
 	class FIREMIS_ClientAddAceArtilleryOption {};
 	class FIREMIS_CurtainFiremission {};

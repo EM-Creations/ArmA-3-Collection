@@ -12,4 +12,6 @@
 //expected [paths aviable,units aviable,min ammount of Units spawned, max ammount of units spawned,max ammount of units in the field,delay from mission start,delay between spawns,should clean]
 
 ["Event_ArtyReceiveHint", {hint _this;}] call CBA_fnc_addEventHandler;
-["Event_ReceiveFoGuns", {_this call FUNC(FIREMIS_ClientAddAceArtilleryOption)}] call CBA_fnc_addEventHandler;
+
+private _guns = player getVariable [VAR_SART_OBSGUNS, []];
+[_guns] call FUNC(FIREMIS_ClientAddAceArtilleryOption);
