@@ -7,7 +7,7 @@
 
 // All vehicle classes which have TAD available
 // Leave commented out for default values
-//GVAR(HAS_TAD) = [];
+GVAR(HAS_TAD) = [];
 
 // All helmet classes which have helmet cameras enabled
 // Leave commented out for default values
