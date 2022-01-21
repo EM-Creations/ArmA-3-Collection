@@ -678,7 +678,7 @@ class Mission
 					class Attributes
 					{
 						rank="LIEUTENANT";
-						init="[this, ""USMCRiflePlatoon_SL""] call FW_fnc_GearScript;" \n "[this, ""BLUE""] call FW_fnc_SOTC_SetTeamColor;" \n "[this, [""ru"", ""fr""]] call FW_fnc_ACRES_SetLanguages;" \n "[this, 1] call FW_fnc_ACEM_assignMedic;" \n "[this,[m109, mortar]] call FW_fnc_FIREMIS_ArtMakePlayerObserver;" \n "this setvariable [""StartInVehicle"",[veh1]];";
+						init="[this, ""USMCRiflePlatoon_SL""] call FW_fnc_GearScript;" \n "[this, ""BLUE""] call FW_fnc_SOTC_SetTeamColor;" \n "[this, [""ru"", ""fr""]] call FW_fnc_ACRES_SetLanguages;" \n "[this, 1] call FW_fnc_ACEM_assignMedic;" \n "[this,[m109, mortar]] call FIREMIS_fnc_ArtMakePlayerObserver;" \n "this setvariable [""StartInVehicle"",[veh1]];";
 						name="test_unit";
 						description="Test Unit@testers";
 						isPlayer=1;
@@ -1685,7 +1685,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[this,[m109, mortar]] call FW_fnc_FIREMIS_ArtMakePlayerObserver;";
+						init="[this,[m109, mortar]] call FIREMIS_fnc_ArtMakePlayerObserver;";
 						name="opL";
 						isPlayable=1;
 					};
@@ -2114,7 +2114,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.93535876;
-						init="[this,[mortar], 1, 50, 1000, 100, 1, 1, 10, 100, 0] call FW_fnc_FIREMIS_RegisterForwardObserver;";
+						init="[this,[mortar], 1, 50, 1000, 100, 1, 1, 10, 100, 0] call FIREMIS_fnc_RegisterForwardObserver;";
 						name="op_FO";
 						stance="Middle";
 						class Inventory
