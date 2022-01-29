@@ -8,26 +8,26 @@ GVAR(MissionEnded) = false; //Mission has not ended
 
 [QGVAR(spawnedEvent), {
     params ["_unit"];
-    LOG_1("spawnedEvent started: %1",_unit);
+    //LOG_1("spawnedEvent started: %1",_unit);
 	_unit call FUNC(eventSpawned);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(untrackEvent), {
     params ["_unit"];
-    LOG_1("untrackEvent started: %1",_unit);
+    //LOG_1("untrackEvent started: %1",_unit);
 	_unit call FUNC(untrackUnit);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(killedEvent), {
     params [["_unit", objNull, [objNull]], ["_killer", objNull, [objNull]]];
-    LOG_1("killedevent started: %1",_unit);
+    //LOG_1("killedevent started: %1",_unit);
 	[_unit, _killer] call FUNC(EventKilled);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(respawnEvent), {
-    params [["_unit", objNull, [objNull]]];
-    LOG_1("respawnEvent started: %1",_unit);
-	[_unit] call FUNC(EventRespawned);
+    params [["_unit", objNull, [objNull]], ["_spectator", false, [false]]];
+    LOG_2("respawnEvent started: %1 spectator: %2",_unit,_spectator);
+	[_unit, _spectator] call FUNC(EventRespawned);
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(eventCheckRespawnTickets), {
@@ -37,8 +37,8 @@ GVAR(MissionEnded) = false; //Mission has not ended
     private _canRespawn = false;
     switch (_side) do {
         case west: {
-            if (GVAR(RespawnTicketsWest) > 0) then {
-                GVAR(RespawnTicketsWest) = GVAR(RespawnTicketsWest) - 1;
+            if (GVAR(RespawnTickets_West) > 0) then {
+                GVAR(RespawnTickets_West) = GVAR(RespawnTickets_West) - 1;
                 GVAR(CurrentWaveCountWest) = GVAR(CurrentWaveCountWest) + 1;
                 if (GVAR(CurrentWaveCountWest) >= GVAR(WaveSizeWest) && {!(GVAR(RespawnPenGateWest) isEqualTo objnull)}) then {
                     GVAR(CurrentWaveUnlockedWest) = true;
@@ -53,8 +53,8 @@ GVAR(MissionEnded) = false; //Mission has not ended
             };
         };
         case east: {
-            if (GVAR(RespawnTicketsEast) > 0) then {
-                GVAR(RespawnTicketsEast) = GVAR(RespawnTicketsEast) - 1;
+            if (GVAR(RespawnTickets_East) > 0) then {
+                GVAR(RespawnTickets_East) = GVAR(RespawnTickets_East) - 1;
                 GVAR(CurrentWaveCountEast) = GVAR(CurrentWaveCountEast) + 1;
                 if (GVAR(CurrentWaveCountEast) >= GVAR(WaveSizeEast) && {!(GVAR(RespawnPenGateEast) isEqualTo objnull)}) then {
                     GVAR(CurrentWaveUnlockedEast) = true;
@@ -69,8 +69,8 @@ GVAR(MissionEnded) = false; //Mission has not ended
             };
         };
         case independent: {
-            if (GVAR(RespawnTicketsInd) > 0) then {
-                GVAR(RespawnTicketsInd) = GVAR(RespawnTicketsInd) - 1;
+            if (GVAR(RespawnTickets_Ind) > 0) then {
+                GVAR(RespawnTickets_Ind) = GVAR(RespawnTickets_Ind) - 1;
                 GVAR(CurrentWaveCountInd) = GVAR(CurrentWaveCountInd) + 1;
                 if (GVAR(CurrentWaveCountInd) >= GVAR(WaveSizeInd) && {!(GVAR(RespawnPenGateInd) isEqualTo objnull)}) then {
                     GVAR(CurrentWaveUnlockedInd) = true;
@@ -85,8 +85,8 @@ GVAR(MissionEnded) = false; //Mission has not ended
             };
         };
         case civilian: {
-            if (GVAR(RespawnTicketsCiv) > 0) then {
-                GVAR(RespawnTicketsCiv) = GVAR(RespawnTicketsCiv) - 1;
+            if (GVAR(RespawnTickets_Civ) > 0) then {
+                GVAR(RespawnTickets_Civ) = GVAR(RespawnTickets_Civ) - 1;
                 GVAR(CurrentWaveCountCiv) = GVAR(CurrentWaveCountCiv) + 1;
                 if (GVAR(CurrentWaveCountCiv) >= GVAR(WaveSizeCiv) && {!(GVAR(RespawnPenGateCiv) isEqualTo objnull)}) then {
                     GVAR(CurrentWaveUnlockedCiv) = true;
@@ -103,11 +103,6 @@ GVAR(MissionEnded) = false; //Mission has not ended
     };
     LOG_1("eventCheckRespawnTickets_Response called: %1",_unit);
     [QGVAR(eventCheckRespawnTickets_Response), _canRespawn, _unit] call CBA_fnc_targetEvent;
-
-  // Wait is necessary so that the client has a chance to update the Spectating variable
-  [{
-    [_unit] call FUNC(EventRespawned);
-  }, [_unit], 2] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(ShotCountEvent), {
@@ -117,7 +112,7 @@ GVAR(MissionEnded) = false; //Mission has not ended
     } else {
         [_magazine] call FUNC(getDisplayName);
     };
-    TRACE_3("count event",_magName,_magazine,_projectile);
+    TRACE_3("count event",_magName,(_magazine),_projectile);
     [_side, _magName] call FUNC(shotCount);
 }] call CBA_fnc_addEventHandler;
 

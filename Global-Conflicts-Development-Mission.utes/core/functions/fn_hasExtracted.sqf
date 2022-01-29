@@ -25,14 +25,9 @@ params [["_team", "", [""]],
 //IGNORE_PRIVATE_WARNING ["_side"];
 GETTEAMVAR(_side,_team,"SIDE");
 
-/* diag_log format ["INFO: _side = %1", _side]; */
-
 private _count = {
 	(side _x isEqualTo _side) && {_x inArea _marker}
 } count ([] call BIS_fnc_listPlayers);
-
-/* diag_log format ["INFO: _count = %1", _count]; */
-/* diag_log format ["INFO: current players on team = %1", ([_team, "CURRENT"] call FUNC(GetTeamVariable))]; */
 
 private _result = false;
 if ((CBA_missionTime > 60) && {_count >= _ratio * ([_team, "CURRENT"] call FUNC(GetTeamVariable))}) then {

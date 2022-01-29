@@ -43,7 +43,7 @@
         params ["_unit"];
 
         GVAR(killcam_killer) = _unit getVariable ["ace_medical_lastDamageSource", objNull];
-        if (GVAR(killcam_killer) isEqualTo objNull) then {
+        if (GVAR(killcam_killer) isEqualTo objNull || GVAR(killcam_killer) isEqualTo player) then {
             GVAR(killcam_killer) = _unit getVariable ["ace_medical_lastInstigator", objNull];
         };
         GVAR(killcam_unit_pos) = ASLtoAGL eyePos _unit;
@@ -55,7 +55,7 @@
         };
 
         if (GETMVAR(eg_instant_death,true)) then {
-            cutText ["\n", "BLACK", 0.1, true];
+            QGVAR(respawnBlackScreen) cutText ["\n", "BLACK", 0.1, true];
             [QGVAR(death), 0, true] call ace_common_fnc_setHearingCapability;
             0 fadeSound 0;
             [{
@@ -63,7 +63,7 @@
             }, [], 1] call CBA_fnc_waitAndExecute;
         } else {
             [{
-                cutText ["\n", "BLACK", 0.5, true];
+                QGVAR(respawnBlackScreen) cutText ["\n", "BLACK", 0.5, true];
                 [QGVAR(death), 0, true] call ace_common_fnc_setHearingCapability;
                 [{
                     0 fadeSound 0;

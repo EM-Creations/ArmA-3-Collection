@@ -41,7 +41,7 @@ if (!isNil "uo_fnc_hasGMAccess" && {call uo_fnc_hasGMAccess}) then {
 	private _briefing = [];
 	#include "..\..\customization\briefings\adminNotes.sqf"
 	private _adminNotes = _briefing;
-	
+
 	_playerBriefing append _adminNotes;
 };
 

@@ -107,7 +107,7 @@ FUNC(eg_keyHandler2) = {
 [QGVAR(eventPlayerRespawned), {
     params [["_respawnType", 0, [0]]];
 
-    cutText ["\n","BLACK IN", 5];
+    QGVAR(respawnBlackScreen) cutText ["\n","BLACK IN", 5];
 	[QGVAR(death), 0, false] call ace_common_fnc_setHearingCapability;
 	0 fadeSound 1;
 
@@ -130,10 +130,13 @@ FUNC(eg_keyHandler2) = {
 	};
 
     player setVariable [QGVAR(Body), player, true];
+    player setVariable [QGVAR(HasDied), false, true];
+    player setVariable [QGVAR(Dead), false, true];
+	[QGVAR(respawnEvent), [player]] call CBA_fnc_serverEvent;
 
     switch (_respawnType) do {
         case -1: {
-            cutText ["You have respawned. This mission has unlimited respawns.", 'PLAIN DOWN'];
+            QGVAR(respawnMessagesLayer) cutText ["You have respawned. This mission has unlimited respawns.", 'PLAIN DOWN'];
         };
         case 0: {
             private _p = "";
@@ -141,31 +144,92 @@ FUNC(eg_keyHandler2) = {
         		_p = "s";
         	};
         	private _message2 = format ["You have %1 individual ticket%2 remaining, you can respawn %1 time%2", GVAR(RespawnTickets), _p];
-            cutText [_message2, 'PLAIN DOWN'];
+            QGVAR(respawnMessagesLayer) cutText [_message2, 'PLAIN DOWN'];
         };
         case 1: {
             private _sideTickets = switch (side player) do {
         		case west: {
-        			GVAR(RespawnTicketsWest)
+        			GVAR(RespawnTickets_West)
         		};
         		case east: {
-        			GVAR(RespawnTicketsEast)
+        			GVAR(RespawnTickets_East)
         		};
         		case independent: {
-        			GVAR(RespawnTicketsInd)
+        			GVAR(RespawnTickets_Ind)
         		};
         		case civilian: {
-        			GVAR(RespawnTicketsCiv)
+        			GVAR(RespawnTickets_Civ)
         		};
                 default {
                     0
                 };
         	};
-        	private _p = "";
-        	if (_sideTickets != 1) then {
-        		_p = "s";
+            if (_sideTickets isEqualTo 0) then {
+                QGVAR(respawnMessagesLayer) cutText ['Your side has no tickets left, you can not respawn', 'PLAIN DOWN'];
+        	} else {
+                private _p = "";
+                if (_sideTickets != 1) then {
+            		_p = "s";
+            	};
+                QGVAR(respawnMessagesLayer) cutText [format ['Your side has %1 ticket%2 left, you can respawn %1 time%2', _sideTickets, _p], 'PLAIN DOWN'];
+            };
+        };
+        case 2: {
+            private _sideTickets = switch (side player) do {
+        		case west: {
+        			GVAR(RespawnTickets_West)
+        		};
+        		case east: {
+        			GVAR(RespawnTickets_East)
+        		};
+        		case independent: {
+        			GVAR(RespawnTickets_Ind)
+        		};
+        		case civilian: {
+        			GVAR(RespawnTickets_Civ)
+        		};
+                default {
+                    0
+                };
         	};
-        	cutText [format ['Your side has %1 ticket%2 left, you can respawn %1 time%2', _sideTickets, _p], 'PLAIN DOWN'];
+            private _indTickets = switch (side player) do {
+                case west: {
+                    GVAR(IndividualRespawnTickets_West)
+                };
+                case east: {
+                    GVAR(IndividualRespawnTickets_East)
+                };
+                case independent: {
+                    GVAR(IndividualRespawnTickets_Ind)
+                };
+                case civilian: {
+                    GVAR(IndividualRespawnTickets_Civ)
+                };
+                default {
+                    0
+                };
+            };
+            if (_sideTickets isEqualTo 0) then {
+                QGVAR(respawnMessagesLayer) cutText ['Your side has no tickets left, you can not respawn', 'PLAIN DOWN'];
+        	} else {
+                if (_indTickets isEqualTo 0) then {
+                    QGVAR(respawnMessagesLayer) cutText ['You have no individual tickets left, you can not respawn', 'PLAIN DOWN'];
+            	} else {
+                    private _pS = "";
+                    if (_sideTickets isNotEqualTo 1) then {
+                		_pS = "s";
+                	};
+                    private _pI = "";
+                    if (_indTickets isNotEqualTo 1) then {
+                		_pI = "s";
+                	};
+                    if (_indTickets >= _sideTickets) then {
+                        QGVAR(respawnMessagesLayer) cutText [format ['You have %1 individual ticket%2 left and your team has %3 ticket%4 left, you can respawn %3 time%4', _indTickets, _pI, _sideTickets, _pS], 'PLAIN DOWN'];
+                    } else {
+                        QGVAR(respawnMessagesLayer) cutText [format ['You have %1 individual ticket%2 left and your team has %3 ticket%4 left, you can respawn %1 time%2', _indTickets, _pI, _sideTickets, _pS], 'PLAIN DOWN'];
+                    };
+                };
+            };
         };
         default {};
     };
@@ -175,9 +239,28 @@ FUNC(eg_keyHandler2) = {
     params [["_response", false, [false]]];
     LOG_2("eventCheckRespawnTickets_Response started: %1 response: %2",player,_response);
     if (_response) then {
-        [QGVAR(eventPlayerRespawned), [1]] call CBA_fnc_localEvent;
+        private _indTicketVar = switch (side player) do {
+            case west: {
+                QGVAR(IndividualRespawnTickets_West)
+            };
+            case east: {
+                QGVAR(IndividualRespawnTickets_East)
+            };
+            case independent: {
+                QGVAR(IndividualRespawnTickets_Ind)
+            };
+            case civilian: {
+                QGVAR(IndividualRespawnTickets_Civ)
+            };
+        };
+        if ((missionNamespace getVariable [_indTicketVar, -1]) isEqualTo -1) then {
+            [QGVAR(eventPlayerRespawned), [1]] call CBA_fnc_localEvent;
+        } else {
+            [QGVAR(eventPlayerRespawned), [2]] call CBA_fnc_localEvent;
+        };
     } else {
-        [] call FUNC(StartSpectator);
+        [] call FUNC(StartSpectator); // spectator var is set in this function
+        [QGVAR(respawnEvent), [player, true]] call CBA_fnc_serverEvent;
     };
 }] call CBA_fnc_addEventHandler;
 
