@@ -12,15 +12,19 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=131;
+		nextID=133;
 	};
 	class MarkerIDProvider
 	{
 		nextID=21;
 	};
+	class LayerIndexProvider
+	{
+		nextID=2;
+	};
 	class Camera
 	{
-		pos[]={3569.0476,49.838371,3566.188};
+		pos[]={3572.9807,89.205978,3538.6182};
 		dir[]={-0.0026087065,-0.54641873,0.83750808};
 		up[]={-0.0017020005,0.83751208,0.54641604};
 		aside[]={0.99999505,1.1641532e-010,0.0031148281};
@@ -651,7 +655,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=44;
+		items=46;
 		class Item0
 		{
 			dataType="Group";
@@ -2348,6 +2352,20 @@ class Mission
 			};
 			id=130;
 			type="rhs_3Ya40_1_single";
+		};
+		class Item44
+		{
+			dataType="Layer";
+			name="Layer 1";
+			id=131;
+			atlOffset=99.900002;
+		};
+		class Item45
+		{
+			dataType="Layer";
+			name="Layer 2";
+			id=132;
+			atlOffset=99.900002;
 		};
 	};
 	class Connections
