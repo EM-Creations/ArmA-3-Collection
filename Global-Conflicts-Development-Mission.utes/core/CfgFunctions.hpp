@@ -25,6 +25,7 @@ class Core {
 	class hasExtracted {};
 	class makeUnitsList {};
 	class notTrackUnit {};
+	class refreshCO {};
 	class registerModule {};
 	class removeAllGear {};
 	class removeAllVehicleGear {};

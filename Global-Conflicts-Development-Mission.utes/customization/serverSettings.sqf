@@ -2,13 +2,14 @@ GVAR(ServerViewDistance) = 2500; //View distance for the server (the ai's)
 
 GVAR(TimeLimit) = 30; //Time limit in minutes, to disable the time limit set it to 0
 GVAR(TimeLimitMessage) = "TIME LIMIT REACHED!"; //The message displayed when the time runs out
-GVAR(EndConditionFrequency) = 15; // Frequency in seconds that the end conditions are checked
+GVAR(EndConditionFrequency) = 60; // Frequency in seconds that the end conditions are checked
 
-GVAR(CoC_CheckFrequency) = 30; // Frequency in seconds that the Chain of Command is checked to determine the current Commanding Officer
+GVAR(CoC_CheckFrequency) = 30; // Frequency in seconds that the Chain of Command (CoC) is checked to determine the current Commanding Officer (CO)
 GVAR(CoC_ManualOverride_Blufor) = []; // List, in order (left to right) of which units are the CO in a mission
 GVAR(CoC_ManualOverride_Opfor) = []; // List, in order (left to right) of which units are the CO in a mission
 GVAR(CoC_ManualOverride_Indfor) = []; // List, in order (left to right) of which units are the CO in a mission
 GVAR(CoC_ManualOverride_Civfor) = []; // List, in order (left to right) of which units are the CO in a mission
+GVAR(CoC_Changed_Message) = true; // Set to false to disable a hint for the new CO when the CO changes
 
 /*
 Time for how long disconnected players should be deleted since mission start (in minutes)
@@ -20,19 +21,14 @@ GVAR(DisconnectBodyCleanupTime) = 2;
 GVAR(DisconnectBodyCleanupSides) = [WEST, EAST, INDEPENDENT, CIVILIAN];
 
 /*
-If respawn is enabled you must create empty game logics, for respawn points, following the name format GVAR(side_respawn). Example: FW_west_respawn
-Ticket pools for different sides
+    If respawn is enabled you must create empty game logics, for respawn points, following the name format GVAR(side_respawn). Example: FW_west_respawn
+    Ticket pools for different sides
+    Set individual tickets for players on a side in clientSettings
 */
 GVAR(RespawnTickets_West) = 0;
 GVAR(RespawnTickets_East) = 0;
 GVAR(RespawnTickets_Ind) = 0;
 GVAR(RespawnTickets_Civ) = 0;
-
-//Individual Tickets for different sides
-GVAR(IndividualRespawnTickets_West) = 0;
-GVAR(IndividualRespawnTickets_East) = 0;
-GVAR(IndividualRespawnTickets_Ind) = 0;
-GVAR(IndividualRespawnTickets_Civ) = 0;
 
 //wave respawn
 GVAR(WaveSizeWest) = 0; //How many players have to respawn before wave is released
