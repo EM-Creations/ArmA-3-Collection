@@ -16,4 +16,4 @@ GVAR(AudibleWarning) = false;
 
 //Example:
 //[east, "Kavala"] call FUNC(addAOMarker);
-[blufor, "marker_20"] call FUNC(addAOMarker);
+//[blufor, "marker_20"] call FUNC(addAOMarker);

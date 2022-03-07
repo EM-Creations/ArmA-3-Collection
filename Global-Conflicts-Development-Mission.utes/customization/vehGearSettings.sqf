@@ -7,7 +7,6 @@ Example:
 switch (_type) do {
 
 	case "HUMMVEE": {
-
 		_vehicle call FUNC(RemoveAllVehicleGear);
 
 		["30Rnd_556x45_Stanag", 8] call FUNC(AddItemVehicle);

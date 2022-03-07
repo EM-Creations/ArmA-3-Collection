@@ -35,21 +35,15 @@ SET_GROUP(items)
 	["ItemWatch"] call FUNC(AddItem);
 	["ACE_MapTools"] call FUNC(AddItem);
 	["ACE_earplugs"] call FUNC(AddItem);
-	["FlareYellow_F", 2] call FUNC(AddItem);
-	["FlareRed_F"] call FUNC(AddItem);
-	["FlareWhite_F"] call FUNC(AddItem);
-	["FlareGreen_F"] call FUNC(AddItem);
 END_GROUP;
 
 case (package + "SL"): {
 
 	["rhsusf_spc_squadleader"] call FUNC(AddItem); //Vest
-	["skn_m50_gas_mask"] call FUNC(AddItem); // Gas mask
 
 	ADD_GROUP(uniform);
 	ADD_GROUP(IFAK);
 	ADD_GROUP(items);
-	["ACRE_PRC148", 1] call FUNC(AddItem);
 
 	/* [_unit, ["uk3cb_ak47", "UK3CB_Enfield", "CUP_srifle_M14_DMR", "rhs_weap_m92", "rhs_30Rnd_762x39mm_Savz58_tracer", "CUP_smg_Mac10",
 	 "CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_M", "UK3CB_Enfield_10rnd_Mag_GT", "CUP_30Rnd_45ACP_MAC10_M", "CUP_20Rnd_TE1_Green_Tracer_762x51_DMR", "rhs_30Rnd_762x39mm_Savz58_tracer"], "", 6] call EFUNC(WEPHELP,addWeapon); */

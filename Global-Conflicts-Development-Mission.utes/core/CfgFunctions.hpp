@@ -25,15 +25,12 @@ class Core {
 	class hasExtracted {};
 	class makeUnitsList {};
 	class notTrackUnit {};
-	class refreshCO {};
 	class registerModule {};
 	class removeAllGear {};
 	class removeAllVehicleGear {};
 	class parsedTextDisplay {};
-	class setTeamVariable {};
 	class spectatePrep {};
 	class trackAsset {};
-	class trackUnit {};
 	class untrackUnit {};
 	class briefing {};
 	class gearExport {};
