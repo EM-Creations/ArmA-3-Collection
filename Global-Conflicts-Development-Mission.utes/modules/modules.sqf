@@ -52,7 +52,7 @@ Additional modules that can be enabled by removing the //
 //#include "marker_control\root.sqf"
 //#include "notes\root.sqf"
 //#include "paraflare\root.sqf"
-//#include "rank_icons\root.sqf"
+#include "rank_icons\root.sqf"
 //#include "remove_map\root.sqf"
 //#include "set_face\root.sqf"
 //#include "setup_timer\root.sqf"
