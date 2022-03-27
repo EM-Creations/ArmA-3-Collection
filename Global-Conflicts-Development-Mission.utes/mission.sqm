@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=129;
+	toggles=641;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=133;
+		nextID=137;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=18;
+		nextID=24;
 	};
 	class Camera
 	{
-		pos[]={3572.9807,89.205978,3538.6182};
-		dir[]={-0.0026087065,-0.54641873,0.83750808};
-		up[]={-0.0017020005,0.83751208,0.54641604};
-		aside[]={0.99999505,1.1641532e-010,0.0031148281};
+		pos[]={3582.8223,50.181049,3555.2566};
+		dir[]={-0.048704706,-0.51520872,0.85567987};
+		up[]={-0.029277936,0.85706466,0.51437616};
+		aside[]={0.99838406,0,0.056827329};
 	};
 };
 binarizationWanted=0;
@@ -78,13 +78,14 @@ addons[]=
 	"characters_f_vietnam_02_c",
 	"rhs_c_troops",
 	"rhs_c_heavyweapons",
-	"itc_land_rhsafrf_2b14"
+	"itc_land_rhsafrf_2b14",
+	"UK3CB_Factions_Vehicles_Datsun"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=41;
+		items=42;
 		class Item0
 		{
 			className="A3_Characters_F_Enoch";
@@ -364,6 +365,13 @@ class AddonsMetaData
 			name="itc_land_rhsafrf_2b14";
 			author="RHS + ITC Addons Team";
 		};
+		class Item41
+		{
+			className="UK3CB_Factions_Vehicles_Datsun";
+			name="3CB Factions - Vehicles";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
 	};
 };
 dlcs[]=
@@ -371,7 +379,8 @@ dlcs[]=
 	"Enoch",
 	"RHS_AFRF",
 	"UK3CB_BAF_Vehicles",
-	"RHS_USAF"
+	"RHS_USAF",
+	"UK3CB_Factions"
 };
 randomSeed=15979975;
 class ScenarioData
@@ -655,7 +664,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=46;
+		items=47;
 		class Item0
 		{
 			dataType="Group";
@@ -2366,6 +2375,46 @@ class Mission
 			name="Layer 2";
 			id=132;
 			atlOffset=99.900002;
+		};
+		class Item46
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3589.8855,20.46792,3605.2097};
+				angles[]={0,3.7885687,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="civcar";
+			};
+			id=136;
+			type="UK3CB_C_Datsun_Open";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

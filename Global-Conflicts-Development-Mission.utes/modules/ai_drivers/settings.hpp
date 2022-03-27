@@ -1,6 +1,6 @@
 // Array containing vehicles that will have option to spawn AI driver in them
 // Example: selectVehicles[] = {"BluforLandRover1", "BluforLandRover2"};
-selectVehicles[] = {};
+selectVehicles[] = {"veh1"};
 
 // Array containing vehicle classnames that will have option to spawn AI driver in them
 // Example: VehicleClasses[] = {"Wheeled_APC_F"};
