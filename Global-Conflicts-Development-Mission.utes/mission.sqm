@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=137;
+		nextID=138;
 	};
 	class MarkerIDProvider
 	{
@@ -20,11 +20,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=24;
+		nextID=26;
 	};
 	class Camera
 	{
-		pos[]={3582.8223,50.181049,3555.2566};
+		pos[]={3591.6514,46.991417,3558.8853};
 		dir[]={-0.048704706,-0.51520872,0.85567987};
 		up[]={-0.029277936,0.85706466,0.51437616};
 		aside[]={0.99838406,0,0.056827329};
@@ -79,7 +79,7 @@ addons[]=
 	"rhs_c_troops",
 	"rhs_c_heavyweapons",
 	"itc_land_rhsafrf_2b14",
-	"UK3CB_Factions_Vehicles_Datsun"
+	"rhs_c_t14"
 };
 class AddonsMetaData
 {
@@ -367,10 +367,10 @@ class AddonsMetaData
 		};
 		class Item41
 		{
-			className="UK3CB_Factions_Vehicles_Datsun";
-			name="3CB Factions - Vehicles";
-			author="3 Commando Brigade";
-			url="www.3commandobrigade.com";
+			className="rhs_c_t14";
+			name="T-14 Armata Series Tanks";
+			author="Lyotchik-Snayper for RHS";
+			url="http://www.rhsmods.org/";
 		};
 	};
 };
@@ -379,8 +379,7 @@ dlcs[]=
 	"Enoch",
 	"RHS_AFRF",
 	"UK3CB_BAF_Vehicles",
-	"RHS_USAF",
-	"UK3CB_Factions"
+	"RHS_USAF"
 };
 randomSeed=15979975;
 class ScenarioData
@@ -2381,40 +2380,19 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3589.8855,20.46792,3605.2097};
-				angles[]={0,3.7885687,0};
+				position[]={3593.9524,21.673893,3596.1399};
+				angles[]={-0,3.7451279,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				name="civcar";
+				reportRemoteTargets=1;
+				receiveRemoteTargets=1;
+				reportOwnPosition=1;
 			};
-			id=136;
-			type="UK3CB_C_Datsun_Open";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
-						};
-					};
-				};
-				nAttributes=1;
-			};
+			id=137;
+			type="rhs_t14_tv";
 		};
 	};
 	class Connections

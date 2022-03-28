@@ -7,8 +7,8 @@ selectVehicles[] = {"veh1"};
 VehicleClasses[] = {};
 
 // Use settings below to enable the module for all tracked vehicles, boats, etc in the mission
-AllTanks = false;
-AllCars = true;
+AllTanks = true;
+AllCars = false;
 AllShips = false;
 
 // Enables NVG action
