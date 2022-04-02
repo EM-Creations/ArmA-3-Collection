@@ -5,7 +5,7 @@
 
 SET_GROUP(uniform)
 	["UK3CB_TKP_O_H_Patrolcap_Blk"] call FNC_AddItem;
-	["LOP_U_UVF_Fatigue_BL_OSW", "LOP_U_ISTS_Fatigue_25"] call FNC_AddItemRandom;
+	["U_BG_Guerilla2_1", "U_BG_Guerilla2_3"] call FNC_AddItemRandom;
 	["UK3CB_TKP_O_B_ASS_BLK"] call FNC_AddItem; //Backpack
 END_GROUP;
 

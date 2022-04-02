@@ -9,7 +9,7 @@ private _opForCasualty = "BLAVAKS" call FNC_CasualtyPercentage; // Gets the casu
 }; */
 
 if (_opForCasualty >= 90) exitWith {
-	"Royalist VICTORY<br />Blavaks have retreated due to casualties." call FNC_EndMission;
+	["Royalist VICTORY<br />Blavaks have retreated due to casualties."] remoteExec ["systemChat", 0, true];
 
 };
 

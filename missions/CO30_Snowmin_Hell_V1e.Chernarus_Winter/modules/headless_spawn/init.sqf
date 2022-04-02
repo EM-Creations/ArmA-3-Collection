@@ -24,10 +24,10 @@ doSpawn = {
       private _veh = nil;
       if (((_run % 4) == 0) || ((_run % 2) == 0)) then {
         if ((_run % 4) == 0) then { // Every 4th time
-          _veh = "LOP_US_BMP1" createVehicle getMarkerPos "marker_wp1";
+          _veh = "rhs_bmp1_msv" createVehicle getMarkerPos "marker_wp1";
 
         } else { // Every other time
-          _veh = "LOP_US_UAZ_DshKM" createVehicle getMarkerPos "marker_wp1";
+          _veh = "UK3CB_ARD_O_UAZ_MG" createVehicle getMarkerPos "marker_wp1";
         };
 
         sleep(5);
@@ -44,7 +44,7 @@ doSpawn = {
       };
 
       // Ural spawning each time
-      _veh = "LOP_US_Ural_open" createVehicle getMarkerPos "marker_wp1";
+      _veh = "UK3CB_ARD_O_Ural_Open" createVehicle getMarkerPos "marker_wp1";
 
       sleep(5);
 

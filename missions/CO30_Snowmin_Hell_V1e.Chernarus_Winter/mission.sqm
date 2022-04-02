@@ -5,10 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1537;
+	toggles=513;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
-		nextID=186;
+		nextID=191;
 	};
 	class MarkerIDProvider
 	{
@@ -16,28 +20,30 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={10248.888,344.73532,5400.7632};
-		dir[]={-0.88311666,-0.4535884,0.11984392};
-		up[]={-0.44946858,0.89121133,0.060995422};
-		aside[]={0.13447307,0,0.99091733};
+		pos[]={10047.828,352.95053,5372.7065};
+		dir[]={0.021385733,-0.99975199,-0.0073102862};
+		up[]={0.94600689,0.022495262,-0.32337353};
+		aside[]={-0.32345822,-1.9778963e-007,-0.94625282};
 	};
 };
 binarizationWanted=0;
-sourceName="CO30_Snowmin_Hell_V1d";
+sourceName="CO30_Snowmin_Hell_V1e";
 addons[]=
 {
 	"A3_Characters_F",
+	"ace_nouniformrestrictions",
 	"A3_Modules_F",
 	"A3_Ui_F",
 	"UK3CB_Factions_CHC_I",
-	"acex_fortify",
-	"po_factions_eu"
+	"ace_fortify",
+	"UK3CB_Factions_ARD_I",
+	"UK3CB_Factions_ARD_B"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -47,44 +53,52 @@ class AddonsMetaData
 		};
 		class Item1
 		{
+			className="ace_nouniformrestrictions";
+			name="ACE3 - No Uniform Restrictions";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item2
+		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
+		class Item3
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item4
 		{
 			className="UK3CB_Factions_CHC";
 			name="3CB Factions - CHC";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item4
+		class Item5
 		{
-			className="acex_fortify";
-			name="acex_fortify";
+			className="ace_fortify";
+			name="ace_fortify";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item5
+		class Item6
 		{
-			className="po_factions_eu";
-			name="po_factions_eu";
-			author="Leight, Keeway";
+			className="UK3CB_Factions_ARD";
+			name="3CB Factions - ARD";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
 		};
 	};
 };
 dlcs[]=
 {
 	"UK3CB_Factions",
-	"LOP_LeightsOPFOR"
+	"RHS_AFRF"
 };
 randomSeed=877315;
 class ScenarioData
@@ -92,8 +106,8 @@ class ScenarioData
 	author="StatusRed";
 	overviewText="Separatists fight against an incoming enemy convoy in the SNOW! | HC";
 	overviewTextLocked="Separatists fight against an incoming enemy convoy in the SNOW! | HC";
-	overViewPicture="images\title.jpg";
-	overViewPictureLocked="images\title.jpg";
+	overViewPicture="images\title.paa";
+	overViewPictureLocked="images\title.paa";
 	onLoadMission="Separatists fight against an incoming enemy convoy in the SNOW! | HC";
 	loadScreen="images\title.jpg";
 	class Header
@@ -111,7 +125,7 @@ class CustomAttributes
 		class Attribute0
 		{
 			property="ENH_dynamicSkill";
-			expression="if (!is3DEN && {_value # 0 && {isServer}}) then			{				_value params				[					'_enable',					'_skillMinBLUFOR',					'_skillAimMinBLUFOR',					'_skillMaxBLUFOR',					'_skillAimMaxBlUFOR',					'_skillMinOPFOR',					'_skillAimMinOPFOR',					'_skillMaxOPFOR',					'_skillAimMaxOPFOR',					'_skillMinINDFOR',					'_skillAimMinINDFOR',					'_skillMaxINDFOR',					'_skillAimMaxINDFOR'				];				[					true,					[						[WEST,_skillMinBLUFOR,_skillAimMinBLUFOR,_skillMaxBLUFOR,_skillAimMaxBlUFOR],						[EAST,_skillMinOPFOR,_skillAimMinOPFOR,_skillMaxOPFOR,_skillAimMaxOPFOR],						[INDEPENDENT,_skillMinINDFOR,_skillAimMinINDFOR,_skillMaxINDFOR,_skillAimMaxINDFOR]					]				] call BIS_fnc_EXP_camp_dynamicAISkill;			}";
+			expression="if (!is3DEN && _value # 0 && isServer) then      {        _value params        [          '_enable',          '_skillMinBLUFOR',          '_skillAimMinBLUFOR',          '_skillMaxBLUFOR',          '_skillAimMaxBlUFOR',          '_skillMinOPFOR',          '_skillAimMinOPFOR',          '_skillMaxOPFOR',          '_skillAimMaxOPFOR',          '_skillMinINDFOR',          '_skillAimMinINDFOR',          '_skillMaxINDFOR',          '_skillAimMaxINDFOR'        ];        [          true,          [            [WEST, _skillMinBLUFOR, _skillAimMinBLUFOR, _skillMaxBLUFOR, _skillAimMaxBlUFOR],            [EAST, _skillMinOPFOR, _skillAimMinOPFOR, _skillMaxOPFOR, _skillAimMaxOPFOR],            [INDEPENDENT, _skillMinINDFOR, _skillAimMinINDFOR, _skillMaxINDFOR, _skillAimMaxINDFOR]          ]        ] call BIS_fnc_EXP_camp_dynamicAISkill;      }";
 			class Value
 			{
 				class data
@@ -350,12 +364,109 @@ class CustomAttributes
 		};
 		nAttributes=2;
 	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="ENH_SPR";
+			expression="if (!is3DEN && _value # 0 > 0 && !isMultiplayer) then      {        ENH_SPR_Ruleset = _value param [0, 0];        ENH_SPR_Delay = _value param [1, 20];        ENH_SPR_CanDie = _value param [2, false];        ENH_SPR_RestoreLoadout = _value param [3, false];        ENH_SPR_OnRespawnCode = compile (_value param [4, '']);        ENH_SPR_Positions =        [          allMapMarkers select {'respawn_east' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_west' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_guerilla' in toLower _x} apply {getMarkerPos _x},          allMapMarkers select {'respawn_civilian' in toLower _x} apply {getMarkerPos _x}        ];        {          _x setVariable ['ENH_SPR_OriginalSide', side group _x];          _x setVariable ['ENH_SPR_OriginalLoadout', getUnitLoadout _x];          _x addEventHandler ['handleDamage',          {            params ['_unit', '', '_damage', '', '', '_index'];            if (!alive _unit || lifeState _unit isEqualTo 'INCAPACITATED') exitWith {0};            if (_unit getVariable ['ENH_SPR_Tickets', 0] == 0) then            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              _damage;            };            if (ENH_SPR_CanDie && _index in [1, 2] && _damage >= 1) exitWith            {              _unit removeEventHandler ['handleDamage', _thisEventHandler];              1;            };            if (_index < 8 && (_damage min 0.95) == 0.95) then            {              setAccTime 1;              _unit allowDamage false;              _unit setCaptive true;              _unit setUnconscious true;              _unit setVariable ['ENH_SPR_Tickets', (_unit getVariable ['ENH_SPR_Tickets', 0]) - 1];              if (isPlayer _unit) then {enableTeamSwitch false} else {removeSwitchableUnit _unit};              moveOut _unit;              _unit spawn ENH_fnc_SPR_respawnTimer;            };            _damage min 0.95;          }];        } forEach (allUnits select {_x getVariable ['ENH_SPR_Tickets', 0] > 0});                ENH_fnc_SPR_respawn =        {          scriptName 'ENH_Attribute_SPR_Respawn';          params ['_unit'];          if (isPlayer _unit) then {enableTeamSwitch true} else {addSwitchableUnit _unit};          if (ENH_SPR_RestoreLoadout) then {_unit setUnitLoadout (_unit getVariable 'ENH_SPR_OriginalLoadout')};          private _sideID = (_unit getVariable 'ENH_SPR_OriginalSide') call BIS_fnc_sideID;          private _positions = ENH_SPR_Positions select _sideID;          if (_positions isNotEqualTo []) then          {            switch (ENH_SPR_Ruleset) do            {              case 3:              {                _unit setPos (([_positions, [], {_unit distance _x}, 'ASCEND'] call BIS_fnc_sortBy) select 0);              };              case 2:              {                _unit setPos selectRandom _positions;              };            };          };          _unit setUnconscious false;          _unit allowDamage true;          _unit setDamage 0;          _unit switchMove '';          _unit call ENH_SPR_OnRespawnCode;          _unit spawn          {            sleep 8;            _this setCaptive false;          };        };                ENH_fnc_SPR_respawnTimer =        {          scriptName 'ENH_Attribute_SPR_RespawnTimer';          params ['_unit'];          private _respawnTime = time + ENH_SPR_Delay;          if (isPlayer _unit) then          {            private _ctrlRespawnTimer = (call BIS_fnc_displayMission) ctrlCreate ['RscStructuredText',-1];            _ctrlRespawnTimer ctrlSetPosition [0.25, 0, 0.5, 0.06];            _ctrlRespawnTimer ctrlSetBackgroundColor [0, 0, 0, 0.1];            _ctrlRespawnTimer ctrlCommit 0;            ENH_SPR_OriginalVolume = [soundVolume, musicVolume, radioVolume, speechVolume, environmentVolume];            0 cutText ['', 'BLACK OUT', 0.3];            0.3 fadeSound 0;            0.3 fadeMusic 0;            0.3 fadeRadio 0;            0.3 fadeSpeech 0;            0.3 fadeEnvironment 0;            showChat false;            while {time < _respawnTime} do            {              _ctrlRespawnTimer ctrlSetStructuredText parseText format ['<t size=''1.25'' color=''#218a36'' align=''center''>%1</t>', [(_respawnTime - time), 'HH:MM'] call BIS_fnc_timeToString];              sleep 0.1;            };            ctrlDelete _ctrlRespawnTimer;            0 cutText ['', 'BLACK IN', 8];            8 fadeSound (ENH_SPR_OriginalVolume # 0);            8 fadeMusic (ENH_SPR_OriginalVolume # 1);            8 fadeRadio (ENH_SPR_OriginalVolume # 2);            8 fadeSpeech (ENH_SPR_OriginalVolume # 3);            8 fadeEnvironment (ENH_SPR_OriginalVolume # 4);            showChat true;            [              ['Respawned'],              [format ['GRID: %1', mapGridPosition _unit]],              [format ['Tickets left: %1', _unit getVariable 'ENH_SPR_Tickets']]            ] spawn BIS_fnc_EXP_camp_SITREP;          }          else          {            if ((side player getFriend (_unit getVariable 'ENH_SPR_OriginalSide')) >= 0.6) then            {              [                str _unit, 'onEachFrame',                {                  drawIcon3D ['\a3\Modules_f\data\portraitRespawn_ca.paa', [0.13, 0.54, 0.21, 0.8], ASLToAGL ((_this # 0) modelToWorldVisualWorld [0, 0, 1]), 1, 1, 0, str round ((_this # 1) - time), 2];                },                [_unit, _respawnTime]              ] call BIS_fnc_addStackedEventHandler;            };            sleep ENH_SPR_Delay;          };          [str _unit, 'onEachFrame'] call BIS_fnc_removeStackedEventHandler;          _unit call ENH_fnc_SPR_respawn;        };      }";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=5;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=20;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"BOOL"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"BOOL"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item4
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
 };
 class Mission
 {
 	class Intel
 	{
-		briefingName="CO30 Snowmin Hell v1d";
+		briefingName="CO30 Snowmin Hell v1e";
 		overviewText="Separatists fight against an incoming enemy convoy in the SNOW! | HC";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
@@ -1023,7 +1134,7 @@ class Mission
 				class Attribute0
 				{
 					property="groupID";
-					expression="[_this, _value] call CBA_fnc_setCallsign";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
 					class Value
 					{
 						class data
@@ -1746,7 +1857,7 @@ class Mission
 				class Attribute0
 				{
 					property="groupID";
-					expression="[_this, _value] call CBA_fnc_setCallsign";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
 					class Value
 					{
 						class data
@@ -2408,7 +2519,7 @@ class Mission
 				class Attribute0
 				{
 					property="groupID";
-					expression="[_this, _value] call CBA_fnc_setCallsign";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
 					class Value
 					{
 						class data
@@ -2451,7 +2562,7 @@ class Mission
 				class Attribute0
 				{
 					property="VehicleCustomization";
-					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
 					class Value
 					{
 						class data
@@ -2704,7 +2815,7 @@ class Mission
 				class Attribute0
 				{
 					property="VehicleCustomization";
-					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
 					class Value
 					{
 						class data
@@ -2962,7 +3073,26 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="acex_fortify_setupModule_AddToolItem";
+					property="ace_fortify_setupModule_Budget";
+					expression="_this setVariable ['Budget',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=-1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_fortify_setupModule_AddToolItem";
 					expression="_this setVariable ['AddToolItem',_value,true];";
 					class Value
 					{
@@ -2979,10 +3109,10 @@ class Mission
 						};
 					};
 				};
-				class Attribute1
+				class Attribute2
 				{
-					property="acex_fortify_setupModule_Budget";
-					expression="_this setVariable ['Budget',_value,true];";
+					property="ace_fortify_setupModule_Preset";
+					expression="_this setVariable ['Preset',_value,true];";
 					class Value
 					{
 						class data
@@ -2994,13 +3124,13 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1000;
+							value=0;
 						};
 					};
 				};
-				class Attribute2
+				class Attribute3
 				{
-					property="acex_fortify_setupModule_Side";
+					property="ace_fortify_setupModule_Side";
 					expression="_this setVariable ['Side',_value,true];";
 					class Value
 					{
@@ -3013,26 +3143,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=3;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="acex_fortify_setupModule_Preset";
-					expression="_this setVariable ['Preset',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="medium";
+							value=1;
 						};
 					};
 				};
@@ -3050,23 +3161,6 @@ class Mission
 			atlOffset=-0.00048446655;
 		};
 		class Item13
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={10461.786,7.2591896,2499.4941};
-				angles[]={6.2818484,6.1470861,6.2818484};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=63;
-			type="LOP_US_UAZ";
-			atlOffset=-1.9073486e-006;
-		};
-		class Item14
 		{
 			dataType="Group";
 			side="East";
@@ -3197,17 +3291,17 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={10461.784,6.5136127,2499.4958};
+					position[]={10461.784,6.5136156,2499.4961};
 					type="GetIn";
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=68;
-					atlOffset=0.49999809;
+					atlOffset=0.50000048;
 					class AttachedTo
 					{
-						id=63;
+						id=187;
 						offset[]={0,0.5,0};
 					};
 				};
@@ -3557,7 +3651,7 @@ class Mission
 			id=66;
 			atlOffset=-4.7683716e-007;
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Marker";
 			position[]={10348.763,48.714001,3674.198};
@@ -3567,7 +3661,7 @@ class Mission
 			id=97;
 			atlOffset=7.2479248e-005;
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Marker";
 			position[]={8356.9414,140.201,4932.3428};
@@ -3576,7 +3670,7 @@ class Mission
 			id=98;
 			atlOffset=0.00054931641;
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Marker";
 			position[]={10185.281,62.333,4056.052};
@@ -3586,7 +3680,7 @@ class Mission
 			id=99;
 			atlOffset=-1.5337334;
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Marker";
 			position[]={10674.618,138.812,4671.1602};
@@ -3596,7 +3690,7 @@ class Mission
 			id=100;
 			atlOffset=0.0004119873;
 		};
-		class Item19
+		class Item18
 		{
 			dataType="Marker";
 			position[]={10346.591,199.18401,5119.1021};
@@ -3606,7 +3700,7 @@ class Mission
 			id=101;
 			atlOffset=-2.3410645;
 		};
-		class Item20
+		class Item19
 		{
 			dataType="Marker";
 			position[]={10141.544,243.765,5409.1489};
@@ -3616,7 +3710,7 @@ class Mission
 			id=102;
 			atlOffset=-1.2550049;
 		};
-		class Item21
+		class Item20
 		{
 			dataType="Group";
 			side="East";
@@ -3802,7 +3896,7 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={10512.967,6.5,2360.5894};
+					position[]={10512.967,6.5,2360.5891};
 					type="GetIn";
 					class Effects
 					{
@@ -3812,7 +3906,7 @@ class Mission
 					atlOffset=0.5;
 					class AttachedTo
 					{
-						id=113;
+						id=188;
 						offset[]={0,0.5,0};
 					};
 				};
@@ -4174,39 +4268,7 @@ class Mission
 			};
 			id=106;
 		};
-		class Item22
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={10512.967,7.1791759,2360.5894};
-				angles[]={0,5.4547915,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=113;
-			type="LOP_US_UAZ_DshKM";
-		};
-		class Item23
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={10359.271,10.200745,2308.574};
-				angles[]={6.2738504,1.1375152,6.1782393};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=144;
-			type="LOP_US_Ural";
-		};
-		class Item24
+		class Item21
 		{
 			dataType="Group";
 			side="East";
@@ -4395,17 +4457,17 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={10359.071,8.8012781,2308.5918};
+					position[]={10359.071,8.8012781,2308.592};
 					type="GetIn";
 					class Effects
 					{
 					};
 					showWP="NEVER";
 					id=149;
-					atlOffset=0.5;
+					atlOffset=0.49999809;
 					class AttachedTo
 					{
-						id=144;
+						id=190;
 						offset[]={0,0.5,0};
 					};
 				};
@@ -4609,7 +4671,7 @@ class Mission
 			};
 			id=145;
 		};
-		class Item25
+		class Item22
 		{
 			dataType="Group";
 			side="East";
@@ -4798,7 +4860,7 @@ class Mission
 				{
 					dataType="Waypoint";
 					loiterAltitude=-3.4028235e+038;
-					position[]={7075.499,294.48999,7684.8174};
+					position[]={7075.499,294.48999,7684.8169};
 					type="GetIn";
 					class Effects
 					{
@@ -4808,7 +4870,7 @@ class Mission
 					atlOffset=0.5;
 					class AttachedTo
 					{
-						id=170;
+						id=189;
 						offset[]={0,0.5,0};
 					};
 				};
@@ -4988,21 +5050,71 @@ class Mission
 			};
 			id=166;
 		};
-		class Item26
+		class Item23
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7075.499,295.16916,7684.8174};
-				angles[]={0,1.2786493,0};
+				position[]={10461.786,7.2591925,2499.4944};
+				angles[]={6.2818413,6.1470842,6.2818413};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 			};
-			id=170;
-			type="LOP_US_UAZ_DshKM";
+			id=187;
+			type="UK3CB_ARD_I_UAZ_Closed";
+			atlOffset=4.7683716e-007;
+		};
+		class Item24
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10512.967,7.1791759,2360.5891};
+				angles[]={0,5.4547997,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=188;
+			type="UK3CB_ARD_B_UAZ_MG";
+		};
+		class Item25
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7075.499,295.16916,7684.8169};
+				angles[]={0,1.2786456,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=189;
+			type="UK3CB_ARD_B_UAZ_MG";
+		};
+		class Item26
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10359.271,10.200765,2308.5742};
+				angles[]={6.2738476,1.1375184,6.1782384};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=190;
+			type="UK3CB_ARD_B_Ural_Open";
+			atlOffset=-1.9073486e-006;
 		};
 	};
 };

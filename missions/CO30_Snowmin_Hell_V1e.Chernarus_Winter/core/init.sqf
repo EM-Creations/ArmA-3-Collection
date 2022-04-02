@@ -66,7 +66,7 @@ if (!isDedicated) then {
 	};
 
 	// "FW_EndMission" player event sends the received variables to the end screen
-	FW_EndMissionEh = ["FW_EndMission", {_this execVM "core\dia\endscreen\dia_endscreen.sqf";}] call CBA_fnc_addEventHandler;
+	/* FW_EndMissionEh = ["FW_EndMission", {_this execVM "core\dia\endscreen\dia_endscreen.sqf";}] call CBA_fnc_addEventHandler; */
 
 	// Various settings
 	enableEngineArtillery false; // Disable Arma 3 artillery computer

@@ -3,7 +3,7 @@
 #define package "GUER_"
 
 SET_GROUP(UNIFORM)
-	["LOP_U_CHR_Woodlander_01", "LOP_U_CHR_Woodlander_02", "LOP_U_CHR_Woodlander_03", "LOP_U_CHR_Woodlander_04"] call FNC_AddItemRandom;
+	["UK3CB_CHC_C_U_WOOD_04", "UK3CB_CHC_C_U_WOOD_01", "UK3CB_CHC_C_U_WOOD_02", "UK3CB_CHC_C_U_WOOD_03"] call FNC_AddItemRandom;
 	["V_BandollierB_oli", "V_BandollierB_blk", "V_BandollierB_rgr", "V_BandollierB_khk"] call FNC_AddItemRandom;
 	["rhs_sidor"] call FNC_AddItem;
 
@@ -12,7 +12,7 @@ END_GROUP;
 SET_GROUP(UNIFORM_SL)
 	["CUP_U_O_RUS_Ratnik_Winter"] call FNC_AddItem;
 	["V_BandollierB_oli", "V_BandollierB_blk", "V_BandollierB_rgr", "V_BandollierB_khk"] call FNC_AddItemRandom;
-	["H_ShemagOpen_khk", "LOP_H_Shemag_GRE", "LOP_H_Shemag_BLU", "LOP_H_Shemag_OLV"] call FNC_AddItemRandom;
+	["H_ShemagOpen_khk", "UK3CB_G_Neck_Shemag_Oli", "UK3CB_G_Neck_Shemag_Tan", "UK3CB_G_Neck_Shemag"] call FNC_AddItemRandom;
 	["rhs_sidor"] call FNC_AddItem;
 
 END_GROUP;

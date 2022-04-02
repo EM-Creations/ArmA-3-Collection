@@ -61,7 +61,7 @@ switch (side player) do { // Checks what team the player is on
 }; // End of switch
 
 NEWTAB("VI. Mission notes:") //This is shown for everyone
-<font color='#FFFFFF' size='16' face='PuristaBold'>Version:</font> 1d
+<font color='#FFFFFF' size='16' face='PuristaBold'>Version:</font> 1e
 <br />
 Mission created by StatusRed.
 <br />
@@ -76,6 +76,12 @@ Mission created by StatusRed.
 ENDTAB;
 
 NEWTAB("Changelog") // This is shown for everyone
+<font color='#FFF' size='14' face='RobotoCondensedBold'>Version 1e:</font>
+<br />
+- Removed gear being removed from modpack.
+<br />
+- Fixed old framework freezing on end conditions bug.
+<br /><br />
 <font color='#FFF' size='14' face='RobotoCondensedBold'>Version 1d:</font>
 <br />
 - Fixes.
