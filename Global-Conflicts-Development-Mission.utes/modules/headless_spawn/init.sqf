@@ -1,3 +1,7 @@
+/**
+ * This file is run when the mission starts, here you can customise how
+ * headless AI units will spawn in and what behaviour they'll have
+ */
 #include "script_component.hpp"
 
 #include "settings.sqf"
@@ -5,14 +9,14 @@
 [{CBA_missionTime > 0}, {
   params["_groups"];
 
-  LOG_1("_groups = %1",_groups);
-
   private _hcPresent = if (isNil "HC_1") then {false} else {true};
 
-  LOG_1("_hcPresent = %1",_hcPresent);
-
   doSpawn = {
-    // Change the code below to alter the behaviour
+    /*
+     * Change the code below to alter the behaviour of headless AI spawned units
+     * This function is an example and elements of it are commented out to show
+     * what you could possibly do.
+     */
     private _run = 1;
     /* while {True} do { */
       private _group = nil;
@@ -70,7 +74,7 @@
       _run = _run + 1;
     };
   };
-  
+
   // Leave this code alone
   if (_hcPresent && isMultiplayer) then { // If HC is connected
     if (!isServer && !hasInterface) then { // If this unit is the HC

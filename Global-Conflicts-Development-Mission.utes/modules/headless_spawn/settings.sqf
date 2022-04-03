@@ -6,6 +6,7 @@
  *     - The gear script MUST be included in 'customization\loadouts.sqf'
  *     - A PLAYABLE headless client unit named 'HC_1' must be added to the mission
  *     - Create AI spawn groups using the format below and include them in the _groups variable
+ *     - Check the init.sqf file to modify the behaviour and actions of headless AI spawned units
  */
 
 // private _group1 = [POSITION, [[UNIT TYPE, GEAR SCRIPT]], SIDE];
