@@ -2,7 +2,7 @@
     <img height=300 src="https://github.com/EM-Creations/ArmA-3-Collection/blob/main/logo.png?raw=true">
 </p>
 
-# StatusRed's ArmA 3 Collection
+# ArmA 3 Collection
 This repository is a collection of some of my ArmA 3 work, including:
 * Scripts which have been made for specific purposes
 * Missions
