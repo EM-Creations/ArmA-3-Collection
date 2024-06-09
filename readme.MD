@@ -3,7 +3,7 @@
 </p>
 
 # StatusRed's ArmA 3 Collection
-This repository is a collection of some of StatusRed's ArmA 3 work, including:
+This repository is a collection of some of my ArmA 3 work, including:
 * Scripts which have been made for specific purposes
 * Missions
 * [Global Conflicts Framework](https://github.com/Global-Conflicts-ArmA/Olsen-Framework-Arma-3) development test mission
